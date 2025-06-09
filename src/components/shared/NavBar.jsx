@@ -30,8 +30,8 @@ const NavBar = () => {
         Home
       </NavLink>
 
-      <NavLink className="py-3" to="/allrecipes">
-        All Recipes
+      <NavLink className="py-3" to="/allpackages">
+        All Packages
       </NavLink>
       <NavLink className="py-3" to="/aboutus">
         About Us
@@ -108,29 +108,6 @@ const NavBar = () => {
         </div>
         {user ? (
           <>
-            {/* <div>
-              <img
-                id="clickable"
-                className="btn w-9 h-9 b-0 p-0 rounded-full overflow-hidden object-cover"
-                src={`${user ? user?.photoURL : ""}`}
-              />
-
-              <Tooltip
-                className="p-4 space-y-4"
-                anchorSelect="#clickable"
-                clickable
-              >
-                <p>{user?.displayName}</p>
-                <Link
-                  className="bg-amber-50 text-black p-0.5 rounded-sm"
-                  to="/"
-                  onClick={handleLogOut}
-                >
-                  Log Out
-                </Link>
-              </Tooltip>
-            </div> */}
-
             <div className="flex-none">
               <div className="dropdown dropdown-end">
                 <div
