@@ -1,5 +1,5 @@
 import React from "react";
-import error404 from "../assets/images/error404.jpg";
+import error404 from "../assets/animation/Error 404 animated.gif";
 import { Link } from "react-router";
 
 const Error404 = () => {
@@ -13,7 +13,7 @@ const Error404 = () => {
         />
         {/* <h1 className="text-5xl font-bold text-gray-800 mb-3">404</h1> */}
         <p className="text-2xl font-bold text-gray-600 mb-6">
-          Oops! Page not found.
+          Oops! You seems lost in Himalayas
         </p>
         <Link
           to="/"
