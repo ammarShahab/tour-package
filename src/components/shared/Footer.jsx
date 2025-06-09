@@ -16,7 +16,7 @@ const Footer = () => {
         <div className="flex justify-center items-center gap-4 mb-4 ">
           <img src={logo} className="w-8" alt="logo" />
           <h1 className="text-2xl font-bold md:text-3xl dark:text-white">
-            DishDiary
+            Trip Nest
           </h1>
         </div>
         <div className="text-sm mb-4 dark:text-white">

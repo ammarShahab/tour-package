@@ -1,6 +1,6 @@
 import React, { use, useState } from "react";
 import RecipeCard from "./RecipeCard";
-import AuthContext from "./context/AuthContext";
+import AuthContext from "../context/AuthContext";
 import { useLoaderData } from "react-router";
 
 const AllRecipes = () => {

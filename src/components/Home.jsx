@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import RecipeHighlights from "./RecipeHighlights";
+import RecipeHighlights from "./packages/RecipeHighlights";
 import NewsLetter from "./shared/NewsLetter";
 import TopRecipes from "./TopRecipes";
 import Banner from "./shared/Banner";

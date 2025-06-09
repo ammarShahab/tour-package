@@ -31,7 +31,7 @@ const NavBar = () => {
       </NavLink>
 
       {user && (
-        <NavLink className="py-3" to="/addrecipes">
+        <NavLink className="py-3" to="/addpackage">
           Add Recipes
         </NavLink>
       )}
@@ -79,7 +79,7 @@ const NavBar = () => {
         <div className="flex gap-0 sm:gap-2 items-center">
           <img className="w-8 sm:w-16" src={logo} alt="logo" />
           <a className="tesxt-xs sm:text-xl font-extrabold text-[#dedbda] ">
-            DishDiary
+            Trip Nest
           </a>
         </div>
       </div>
@@ -110,7 +110,7 @@ const NavBar = () => {
         </div>
         {user ? (
           <>
-            <div>
+            {/* <div>
               <img
                 id="clickable"
                 className="btn w-9 h-9 b-0 p-0 rounded-full overflow-hidden object-cover"
@@ -131,7 +131,42 @@ const NavBar = () => {
                   Log Out
                 </Link>
               </Tooltip>
+            </div> */}
+
+            {/* <div className="navbar bg-base-100 shadow-sm"> */}
+            <div className="flex-none">
+              <div className="dropdown dropdown-end">
+                <div
+                  tabIndex={0}
+                  role="button"
+                  className="btn btn-ghost btn-circle avatar"
+                >
+                  <div className="w-10 rounded-full">
+                    <img
+                      alt="Tailwind CSS Navbar component"
+                      src={`${user ? user?.photoURL : ""}`}
+                    />
+                  </div>
+                </div>
+                <ul
+                  tabIndex={0}
+                  className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+                >
+                  <li>
+                    <Link to="/addpackage" className="justify-between">
+                      Add Packages
+                    </Link>
+                  </li>
+                  <li>
+                    <a>Settings</a>
+                  </li>
+                  <li>
+                    <a>Logout</a>
+                  </li>
+                </ul>
+              </div>
             </div>
+            {/* </div> */}
           </>
         ) : (
           <>

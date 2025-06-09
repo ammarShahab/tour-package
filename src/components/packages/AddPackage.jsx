@@ -1,17 +1,16 @@
 import React, { use, useState } from "react";
 import { data } from "react-router";
 import Swal from "sweetalert2";
-import AuthContext from "./context/AuthContext";
+import AuthContext from "../context/AuthContext";
 
-const AddRecipe = () => {
-  const [isChecked, setIsChecked] = useState([]);
+const AddPackage = () => {
+  // const [isChecked, setIsChecked] = useState([]);
   const loggedInUser = use(AuthContext);
   // console.log(loggedInUser?.user?.email);
 
-  const handleChecked = (e) => {
+  /* const handleChecked = (e) => {
     e.preventDefault();
     // console.log(e.target);
-
     const { value, checked } = e.target;
     if (checked) {
       setIsChecked((prev) => [...prev, value]);
@@ -20,7 +19,7 @@ const AddRecipe = () => {
     }
 
     console.log(isChecked);
-  };
+  }; */
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -180,7 +179,6 @@ const AddRecipe = () => {
                 type="checkbox"
                 name="Breakfast"
                 value="Breakfast"
-                onChange={handleChecked}
                 className="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
               />
               <label className="text-sm text-gray-700">Breakfast</label>
@@ -190,7 +188,6 @@ const AddRecipe = () => {
                 type="checkbox"
                 name="Lunch"
                 value="Lunch"
-                onChange={handleChecked}
                 className="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
               />
               <label className="text-sm text-gray-700">Lunch</label>
@@ -200,7 +197,6 @@ const AddRecipe = () => {
                 type="checkbox"
                 name="Dinner"
                 value="Dinner"
-                onChange={handleChecked}
                 className="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
               />
               <label className="text-sm text-gray-700">Dinner</label>
@@ -210,7 +206,6 @@ const AddRecipe = () => {
                 type="checkbox"
                 name="Dessert"
                 value="Dessert"
-                onChange={handleChecked}
                 className="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
               />
               <label className="text-sm text-gray-700">Dessert</label>
@@ -220,7 +215,6 @@ const AddRecipe = () => {
                 type="checkbox"
                 name="Vegan"
                 value="Vegan"
-                onChange={handleChecked}
                 className="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
               />
               <label className="text-sm text-gray-700">Vegan</label>
@@ -253,4 +247,4 @@ const AddRecipe = () => {
   );
 };
 
-export default AddRecipe;
+export default AddPackage;

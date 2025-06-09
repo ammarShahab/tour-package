@@ -1,6 +1,6 @@
 import React, { use } from "react";
 import CountUp from "react-countup";
-import AuthContext from "./context/AuthContext";
+import AuthContext from "../context/AuthContext";
 
 const RecipeHighlights = () => {
   const { theme, setTheme } = use(AuthContext);

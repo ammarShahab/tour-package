@@ -2,9 +2,9 @@ import React from "react";
 import { createBrowserRouter } from "react-router";
 import RootLayout from "./layouts/RootLayout";
 import Home from "./components/Home";
-import AllRecipes from "./components/AllRecipes";
-import AddRecipe from "./components/AddRecipe";
-import MyRecipes from "./components/MyRecipes";
+import AllRecipes from "./components/packages/AllRecipes";
+import AddPackage from "./components/packages/AddPackage";
+import MyRecipes from "./components/packages/MyRecipes";
 import LogIn from "./components/LogIn";
 import Register from "./components/Register";
 import AuthLayout from "./layouts/AuthLayout";
@@ -26,7 +26,7 @@ const router = createBrowserRouter([
         element: <AllRecipes></AllRecipes>,
         hydrateFallbackElement: <Loading></Loading>,
       },
-      { path: "/addrecipes", element: <AddRecipe></AddRecipe> },
+      { path: "/addpackage", element: <AddPackage></AddPackage> },
       {
         path: "/myrecipes/:email",
         loader: ({ params }) =>
