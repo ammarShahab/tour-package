@@ -18,17 +18,21 @@ const Register = () => {
     // console.log(name, email, photoURL, password);
 
     if (password.length < 6) {
-      setErrorMessage("❌ Must be at least 6 characters long.");
+      setErrorMessage(toast.error("Must be at least 6 characters long."));
 
       return;
     }
     if (!/[a-z]/.test(password)) {
-      setErrorMessage("❌ Must contain at least one lowercase letter.");
+      setErrorMessage(
+        toast.error("Must contain at least one lowercase letter.")
+      );
 
       return;
     }
     if (!/[A-Z]/.test(password)) {
-      setErrorMessage("❌ Must contain at least one uppercase letter.");
+      setErrorMessage(
+        toast.error("Must contain at least one uppercase letter.")
+      );
 
       return;
     }
@@ -53,9 +57,10 @@ const Register = () => {
       })
       .catch((error) => {
         const errorCode = error.code;
-        const errorMessage = error.message;
+        // const errorMessage = error.message;
         // console.log(errorCode);
         // console.log(errorMessage);
+
         setErrorMessage(errorCode);
       });
   };
@@ -118,7 +123,7 @@ const Register = () => {
           >
             Register
           </button>
-          <p className=" text-xs text-red-400"> {errorMessage}</p>
+          {/* <p className=" text-xs text-red-400"> {errorMessage}</p> */}
         </form>
 
         <p className="text-sm text-center text-gray-600">
