@@ -33,14 +33,16 @@ const NavBar = () => {
       <NavLink className="py-3" to="/allpackages">
         All Packages
       </NavLink>
+
+      {user && (
+        <NavLink className="py-3" to={`/mybookings/${user?.email}`}>
+          My Bookings
+        </NavLink>
+      )}
+
       <NavLink className="py-3" to="/aboutus">
         About Us
       </NavLink>
-      {user && (
-        <NavLink className="py-3" to={`/myrecipes/${user?.email}`}>
-          My Recipes
-        </NavLink>
-      )}
     </>
   );
   return (
@@ -128,11 +130,18 @@ const NavBar = () => {
                 >
                   <li>
                     <Link to="/addpackage" className="justify-between">
-                      Add Packages
+                      Add Package
                     </Link>
                   </li>
                   <li>
-                    <a>Settings</a>
+                    {user && (
+                      <NavLink
+                        // className="py-3"
+                        to={`/managemypackages/${user?.email}`}
+                      >
+                        Manage My Packages
+                      </NavLink>
+                    )}
                   </li>
                   <li>
                     <Link to="/" onClick={handleLogOut}>
