@@ -30,13 +30,11 @@ const NavBar = () => {
         Home
       </NavLink>
 
-      {user && (
-        <NavLink className="py-3" to="/addpackage">
-          Add Recipes
-        </NavLink>
-      )}
       <NavLink className="py-3" to="/allrecipes">
         All Recipes
+      </NavLink>
+      <NavLink className="py-3" to="/aboutus">
+        About Us
       </NavLink>
       {user && (
         <NavLink className="py-3" to={`/myrecipes/${user?.email}`}>
@@ -133,7 +131,6 @@ const NavBar = () => {
               </Tooltip>
             </div> */}
 
-            {/* <div className="navbar bg-base-100 shadow-sm"> */}
             <div className="flex-none">
               <div className="dropdown dropdown-end">
                 <div
@@ -143,7 +140,7 @@ const NavBar = () => {
                 >
                   <div className="w-10 rounded-full">
                     <img
-                      alt="Tailwind CSS Navbar component"
+                      className="btn w-full h-full b-0 p-0 rounded-full overflow-hidden object-cover"
                       src={`${user ? user?.photoURL : ""}`}
                     />
                   </div>
@@ -161,12 +158,13 @@ const NavBar = () => {
                     <a>Settings</a>
                   </li>
                   <li>
-                    <a>Logout</a>
+                    <Link to="/" onClick={handleLogOut}>
+                      Log Out
+                    </Link>
                   </li>
                 </ul>
               </div>
             </div>
-            {/* </div> */}
           </>
         ) : (
           <>
@@ -175,9 +173,6 @@ const NavBar = () => {
               className="btn btn-active btn-info bg-[#d9cab3] border-0"
             >
               Log In
-            </Link>
-            <Link to="/auth/register" className="btn btn-active btn-warning">
-              Register
             </Link>
           </>
         )}

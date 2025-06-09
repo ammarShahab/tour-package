@@ -4,22 +4,8 @@ import Swal from "sweetalert2";
 import AuthContext from "../context/AuthContext";
 
 const AddPackage = () => {
-  // const [isChecked, setIsChecked] = useState([]);
   const loggedInUser = use(AuthContext);
   // console.log(loggedInUser?.user?.email);
-
-  /* const handleChecked = (e) => {
-    e.preventDefault();
-    // console.log(e.target);
-    const { value, checked } = e.target;
-    if (checked) {
-      setIsChecked((prev) => [...prev, value]);
-    } else {
-      setIsChecked((prev) => prev.filter((item) => item !== value));
-    }
-
-    console.log(isChecked);
-  }; */
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -44,7 +30,7 @@ const AddPackage = () => {
       likes,
       isChecked
     ); */
-    const newAddedRecipes = {
+    const newAddedPackage = {
       image,
       title,
       ingredients,
@@ -52,20 +38,20 @@ const AddPackage = () => {
       cuisine,
       prepTime,
       likes,
-      isChecked,
+
       loggedInUser,
       email,
       name,
     };
 
-    // console.log(newAddedRecipes);
+    // console.log(newAddedPackage);
 
     fetch("http://localhost:3000/recipes", {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(newAddedRecipes),
+      body: JSON.stringify(newAddedPackage),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -83,7 +69,7 @@ const AddPackage = () => {
   return (
     <div className="max-w-2xl mx-auto p-6 bg-white shadow-md rounded-lg mt-10 mb-20">
       <h1 className="text-3xl font-bold mb-6 text-center text-gray-800">
-        Add a New Recipe
+        Add Your Package
       </h1>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="flex flex-col">
