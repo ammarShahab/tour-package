@@ -26,7 +26,7 @@ const router = createBrowserRouter([
         element: <AllRecipes></AllRecipes>,
         hydrateFallbackElement: <Loading></Loading>,
       },
-      { path: "/addpackage", element: <AddPackage></AddPackage> },
+      { path: "/add-package", element: <AddPackage></AddPackage> },
       {
         path: "/myrecipes/:email",
         loader: ({ params }) =>

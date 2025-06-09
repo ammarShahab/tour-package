@@ -11,5 +11,7 @@
 }
 
 nav a.active {
-  text-decoration: underline;
+  /* text-decoration: underline; */
+  background-color: #52a8aba4;
+  box-shadow: inset;
 }

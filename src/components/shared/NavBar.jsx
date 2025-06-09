@@ -1,9 +1,8 @@
-import React, { use, useState } from "react";
+import React, { use } from "react";
 import { Link, NavLink, useNavigate } from "react-router";
 import logo from "../../assets/images/logo.png";
 import AuthContext from "../context/AuthContext";
 import toast from "react-hot-toast";
-import { Tooltip } from "react-tooltip";
 import { LuMoon, LuSun } from "react-icons/lu";
 
 const NavBar = () => {
@@ -26,28 +25,37 @@ const NavBar = () => {
 
   const links = (
     <>
-      <NavLink className="py-3" to="/">
+      <NavLink className="text-md py-3 px-2 rounded-lg font-bold" to="/">
         Home
       </NavLink>
 
-      <NavLink className="py-3" to="/allpackages">
+      <NavLink
+        className="text-md py-3 px-2 rounded-lg font-bold"
+        to="/all-packages"
+      >
         All Packages
       </NavLink>
 
       {user && (
-        <NavLink className="py-3" to={`/mybookings/${user?.email}`}>
+        <NavLink
+          className="text-md py-3 px-2 rounded-lg font-bold"
+          to={`/my-bookings/${user?.email}`}
+        >
           My Bookings
         </NavLink>
       )}
 
-      <NavLink className="py-3" to="/aboutus">
+      <NavLink
+        className="text-md py-3 px-2 rounded-lg font-bold"
+        to="/about-us"
+      >
         About Us
       </NavLink>
     </>
   );
   return (
     <div
-      className={`navbar bg-[#584b45] ${
+      className={`navbar bg-[#147073] ${
         theme ? "dark" : ""
       } dark:bg-zinc-600 shadow-sm`}
     >
@@ -78,8 +86,8 @@ const NavBar = () => {
         </div>
         <div className="flex gap-0 sm:gap-2 items-center">
           <img className="w-8 sm:w-16" src={logo} alt="logo" />
-          <a className="tesxt-xs sm:text-xl font-extrabold text-[#dedbda] ">
-            Trip Nest
+          <a className="text-xs sm:text-xl font-extrabold text-[#dedbda] ">
+            Trip <span className="text-[#fe8d02]">Nest</span>
           </a>
         </div>
       </div>
@@ -129,7 +137,7 @@ const NavBar = () => {
                   className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
                 >
                   <li>
-                    <Link to="/addpackage" className="justify-between">
+                    <Link to="/add-package" className="justify-between">
                       Add Package
                     </Link>
                   </li>
@@ -137,7 +145,7 @@ const NavBar = () => {
                     {user && (
                       <NavLink
                         // className="py-3"
-                        to={`/managemypackages/${user?.email}`}
+                        to={`/manage-my-packages/${user?.email}`}
                       >
                         Manage My Packages
                       </NavLink>

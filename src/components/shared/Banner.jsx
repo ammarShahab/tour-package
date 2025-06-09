@@ -1,5 +1,6 @@
 import React from "react";
 import tourismBanner_1 from "../../assets/images/tourism banner_1.jpg";
+import { Link } from "react-router";
 
 const Banner = () => {
   return (
@@ -11,14 +12,22 @@ const Banner = () => {
           className="w-full h-full object-cover opacity-80"
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center font-bitter">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 ">
-            Daily Delicious Discoveries
+          <h1 className="text-3xl mt-10 md:text-6xl font-bold text-white mb-4 ">
+            Discover Your Next Adventure
           </h1>
 
-          <p className="text-lg md:text-xl text-white max-w-2xl">
-            Explore a world of flavors with daily updated recipes. Find your
-            next favorite dish and keep your kitchen inspired.
+          <p className="text-sm md:text-xl text-white max-w-2xl">
+            Explore breathtaking destinations and unforgettable experiences.
+            Book the perfect tour package for your next journey—all in one
+            place.
           </p>
+          <div className="mt-5 sm:mt-24">
+            <Link to="/all-packages">
+              <button className="bg-yellow-400 hover:bg-yellow-500 text-black text-xs sm:text-2xl font-medium sm:font-semibold py-3 px-6 rounded-full transition duration-300">
+                Explore All Packages
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
     </>
