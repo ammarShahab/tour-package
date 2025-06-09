@@ -96,7 +96,7 @@ const NavBar = () => {
       </div>
       <div className="navbar-end space-x-4">
         {/* toggle dark light */}
-        <div className="bg-[#584b45] rounded-xl w-14">
+        <div className="bg-[#fe8d02] rounded-xl w-14">
           <div
             className="bg-[#d4c5bf5c] dark:bg-zinc-
           00 p-1 flex justify-center items-center rounded-xl "
