@@ -103,13 +103,13 @@ const NavBar = () => {
           >
             <button
               onClick={() => setTheme("")}
-              className="bg-transparent  hover:bg-zinc-400 p-2 rounded-lg dark:text-white text-black"
+              className="bg-transparent  hover:bg-[#fe8d02] p-2 rounded-lg dark:text-white text-black"
             >
               <LuSun></LuSun>
             </button>
             <button
               onClick={() => setTheme("dark")}
-              className="bg-transparent hover:bg-zinc-400 p-2 rounded-lg 
+              className="bg-transparent hover:bg-[#fe8d02] p-2 rounded-lg 
             dark:text-white text-black"
             >
               <LuMoon></LuMoon>
