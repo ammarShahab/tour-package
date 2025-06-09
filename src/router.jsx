@@ -13,6 +13,7 @@ import PrilvateRouter from "./components/provider/PrivateRouter";
 import PrivateRouter from "./components/provider/PrivateRouter";
 import Loading from "./components/Loading";
 import RecipeDetails from "./components/RecipeDetails";
+import PrivacyPolicy from "./components/PrivacyPolicy";
 
 const router = createBrowserRouter([
   {
@@ -48,6 +49,7 @@ const router = createBrowserRouter([
         ),
         hydrateFallbackElement: <Loading></Loading>,
       },
+      { path: "/privacy-policy", Component: PrivacyPolicy },
     ],
   },
   {
