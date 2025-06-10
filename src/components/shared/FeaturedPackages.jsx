@@ -1,4 +1,4 @@
-import React, { use, useEffect, useState } from "react";
+import React, { use } from "react";
 import { Link } from "react-router";
 import { Typewriter } from "react-simple-typewriter";
 import AuthContext from "../context/AuthContext";
@@ -9,18 +9,6 @@ const FeaturedPackages = ({ featuredPackagesPromise }) => {
   // console.log(theme);
   const featuredPackages = use(featuredPackagesPromise);
   console.log(featuredPackages);
-
-  /*  useEffect(() => {
-    fetch("http://localhost:3000/top-featuredPackages")
-      .then((res) => res.json())
-      .then((data) => {
-        // console.log(data);
-        setTopfeaturedPackages(data);
-        setIsLoading(false);
-      });
-  }, [setIsLoading]); */
-
-  // console.log(topfeaturedPackages);
 
   const handleViewDetails = (id) => {
     setIsLoading(false);
@@ -94,7 +82,7 @@ const FeaturedPackages = ({ featuredPackagesPromise }) => {
             <Link to={`/featuredPackage/${featuredPackage._id}`}>
               <button
                 onClick={() => handleViewDetails(featuredPackage._id)}
-                className="mt-3 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition"
+                className="mt-3 bg-[#fe8d02] hover:bg-yellow-500 text-white px-4 py-2 rounded-md transition"
               >
                 View Details
               </button>
