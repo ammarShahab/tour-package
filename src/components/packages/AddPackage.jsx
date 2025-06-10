@@ -1,5 +1,4 @@
-import React, { use, useState } from "react";
-import { data } from "react-router";
+import React, { use } from "react";
 import Swal from "sweetalert2";
 import AuthContext from "../context/AuthContext";
 
@@ -26,7 +25,7 @@ const AddPackage = () => {
 
     console.log(newAddedPackage);
 
-    fetch("http://localhost:3000/recipes", {
+    fetch("http://localhost:3000/packages", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -35,10 +34,10 @@ const AddPackage = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log("recipes added to the dB succesfully", data);
+        console.log("packages added to the dB succesfully", data);
         if (data.insertedId) {
           Swal.fire({
-            title: "Recipe Added Successfully",
+            title: "Your Package Added Successfully",
             icon: "success",
             draggable: true,
           });
@@ -207,6 +206,7 @@ const AddPackage = () => {
               /* value={formData.guide_contact_no}
               onChange={handleChange} */
               className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base"
+              placeholder="+8801XXXXXXXXX"
               required
             />
           </div>
