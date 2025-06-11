@@ -21,7 +21,7 @@ const Footer = () => {
               className="flex justify-center space-x-3 lg:justify-start"
             >
               <div className="flex items-center justify-center w-12 h-12 rounded-full dark:bg-default-600">
-                <img src={logo} alt="" srcset="" />
+                <img src={logo} alt="logo" />
               </div>
               <span className="text-2xl font-bold md:text-3xl text-white dark:text-white self-center">
                 Trip <span className="text-[#fe8d02]">Nest</span>

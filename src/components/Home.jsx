@@ -11,11 +11,11 @@ const featuredPackagesPromise = fetch(
 ).then((res) => res.json());
 
 const Home = () => {
-  const { loading } = use(AuthContext);
+  const { isLoading } = use(AuthContext);
   return (
     <>
       <Banner></Banner>
-      <Suspense fallback={loading}>
+      <Suspense fallback={isLoading}>
         <FeaturedPackages
           featuredPackagesPromise={featuredPackagesPromise}
         ></FeaturedPackages>

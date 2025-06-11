@@ -2,6 +2,7 @@ import React, { use } from "react";
 import { Link } from "react-router";
 import { Typewriter } from "react-simple-typewriter";
 import AuthContext from "../context/AuthContext";
+import PackageCard from "./PackageCard";
 
 const FeaturedPackages = ({ featuredPackagesPromise }) => {
   const { setIsLoading, theme } = use(AuthContext);
@@ -40,57 +41,15 @@ const FeaturedPackages = ({ featuredPackagesPromise }) => {
         ></Typewriter>
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
-        {featuredPackages.map((featuredPackage) => (
-          <div
-            key={featuredPackage._id}
-            className={`bg-white rounded-lg shadow-md overflow-hidden text-center p-4 ${
-              theme ? "dark" : ""
-            }  dark:bg-zinc-400`}
-          >
-            <img
-              src={featuredPackage.image}
-              className="w-full h-48 object-cover bg-gray-200 rounded-lg"
-            />
-            <h3 className="text-lg text-left font-semibold text-gray-800 mt-3 dark:text-white">
-              {featuredPackage.tour_name}
-            </h3>
-            <div className="flex items-center gap-4 mt-3">
-              <p className="text-gray-600 dark:text-white">
-                <img
-                  className="w-8 rounded-full"
-                  src={featuredPackage.guide_photo}
-                />
-              </p>
-              <p className="text-gray-600 dark:text-white">
-                {featuredPackage.guide_name}
-              </p>
-            </div>
-            <div className="text-left mt-3 space-y-2">
-              <h4>
-                <span className="font-semibold"> Duration:</span>{" "}
-                {featuredPackage.duration}
-              </h4>
-              <h4>
-                <span className="font-semibold"> Departure Date:</span>{" "}
-                {featuredPackage.departure_date}
-              </h4>
-              <h4>
-                <span className="font-semibold"> Price:</span>
-                <span className="pl-2">{featuredPackage.price} Tk/person</span>
-              </h4>
-            </div>
-            <Link to={`/featuredPackage/${featuredPackage._id}`}>
-              <button
-                onClick={() => handleViewDetails(featuredPackage._id)}
-                className="mt-3 bg-[#fe8d02] hover:bg-yellow-500 text-white px-4 py-2 rounded-md transition"
-              >
-                View Details
-              </button>
-            </Link>
-          </div>
+        {featuredPackages.map((tourPackage) => (
+          <PackageCard
+            key={tourPackage._id}
+            tourPackage={tourPackage}
+            handleViewDetails={handleViewDetails}
+          ></PackageCard>
         ))}
       </div>
-      <Link to="/allfeaturedPackages">
+      <Link to="/allPackages">
         <button className="block mx-auto mt-6 bg-green-500 text-white px-6 py-3 rounded-md text-lg hover:bg-green-600 transition">
           See All Packages
         </button>

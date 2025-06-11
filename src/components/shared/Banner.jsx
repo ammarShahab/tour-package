@@ -22,7 +22,7 @@ const Banner = () => {
             place.
           </p>
           <div className="mt-5 sm:mt-24">
-            <Link to="/all-packages">
+            <Link to="/allPackages">
               <button className="bg-[#fe8d02] hover:bg-yellow-500 text-black text-xs sm:text-2xl font-medium sm:font-semibold py-3 px-6 rounded-full transition duration-300">
                 Explore All Packages
               </button>

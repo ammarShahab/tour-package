@@ -31,7 +31,7 @@ const NavBar = () => {
 
       <NavLink
         className="text-md py-3 px-2 rounded-lg font-bold"
-        to="/all-packages"
+        to="/allPackages"
       >
         All Packages
       </NavLink>
