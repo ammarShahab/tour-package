@@ -19,18 +19,18 @@ const MyPackagesTable = ({ myPackage }) => {
         <span className="sm:hidden font-semibold mr-2">Guide:</span>
         {myPackage.guide_name}
       </td>
-      <td className="py-3 px-4 flex sm:justify-center sm:table-cell">
+      <td className="py-3 px-4 flex sm:justify-center ">
         {/* <span className="sm:hidden font-semibold mr-2">Actions:</span> */}
         <div className="space-x-2">
           <button
             // onClick={() => handleUpdate(myPackage._id)}
-            className="bg-blue-500 text-white px-5 py-3 rounded text-xs sm:text-sm hover:bg-blue-600"
+            className=" text-white px-5 py-3 rounded text-xs sm:text-sm bg-[#fe8d02] hover:bg-yellow-500 font-semibold"
           >
             Update
           </button>
           <button
             // onClick={() => handleDelete(myPackage._id)}
-            className="bg-red-500 text-white px-5 py-3 rounded text-xs sm:text-sm hover:bg-red-600"
+            className="bg-red-500 text-white px-5 py-3 rounded text-xs sm:text-sm hover:bg-red-600 font-semibold"
           >
             Delete
           </button>

@@ -59,7 +59,7 @@ const MyPackages = () => {
                 <th className="py-3 px-4 text-left">Image</th>
                 <th className="py-3 px-4 text-left">Tour Name</th>
                 <th className="py-3 px-4 text-left">Guide Name</th>
-                <th className="py-3 px-4 text-center">Actions</th>
+                <th className="py-3 px-4 flex justify-center">Actions</th>
               </tr>
             </thead>
             <tbody>
