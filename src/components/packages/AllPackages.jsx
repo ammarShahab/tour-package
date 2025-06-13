@@ -1,7 +1,6 @@
 import React, { Suspense, use, useState } from "react";
 import RecipeCard from "./RecipeCard";
 import AuthContext from "../context/AuthContext";
-
 import PackageCard from "../shared/PackageCard";
 
 const allPackagesPromise = fetch("http://localhost:3000/packages").then((res) =>
@@ -13,11 +12,6 @@ const AllPackages = () => {
   const tourPackages = use(allPackagesPromise);
   console.log(tourPackages, isLoading);
 
-  /*  const initialRecipes = useLoaderData();
-  const [recipes, setRecipes] = useState(initialRecipes); */
-
-  // const { recipes, setRecipes } = use(AuthContext);
-  // console.log(recipes);
   return (
     <div className="mt-20 mb-40">
       <h1 className="text-center text-4xl sm:text-5xl font-bold mb-10">

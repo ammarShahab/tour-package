@@ -61,7 +61,7 @@ const PackageDetails = () => {
             <span className="font-semibold">Duration:</span> {duration}
           </p>
           <p>
-            <span className="font-semibold">Price:</span> {price}
+            <span className="font-semibold">Price:</span> {price} Tk/Person
           </p>
           <p>
             <span className="font-semibold">Booking Count:</span> {bookingCount}

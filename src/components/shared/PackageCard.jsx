@@ -2,7 +2,7 @@ import React, { use } from "react";
 import AuthContext from "../context/AuthContext";
 import { Link } from "react-router";
 
-const PackageCard = ({ tourPackage, handleViewDetails }) => {
+const PackageCard = ({ tourPackage }) => {
   const { setIsLoading, theme } = use(AuthContext);
   return (
     <div
@@ -31,19 +31,16 @@ const PackageCard = ({ tourPackage, handleViewDetails }) => {
           {tourPackage.duration}
         </h4>
         <h4>
-          <span className="font-semibold"> Departure Date:</span>{" "}
+          <span className="font-semibold"> Departure Date:</span>
           {tourPackage.departure_date}
         </h4>
         <h4>
           <span className="font-semibold"> Price:</span>
-          <span className="pl-2">{tourPackage.price} Tk/person</span>
+          <span className="pl-2">{tourPackage.price} Tk/Person</span>
         </h4>
       </div>
-      <Link to={`/packages/${tourPackage._id}`}>
-        <button
-          onClick={() => handleViewDetails(tourPackage._id)}
-          className="mt-3 bg-[#fe8d02] hover:bg-yellow-500 text-white px-4 py-2 rounded-md transition"
-        >
+      <Link to={`/packages/${tourPackage?._id}`}>
+        <button className="mt-3 bg-[#fe8d02] hover:bg-yellow-500 text-white px-4 py-2 rounded-md transition">
           View Details
         </button>
       </Link>

@@ -16,6 +16,7 @@ import PrivacyPolicy from "./components/PrivacyPolicy";
 import AllPackages from "./components/packages/AllPackages";
 import PackageDetails from "./components/PackageDetails";
 import MyPackages from "./components/packages/MyPackages";
+import UpdatePackages from "./components/packages/UpdatePackages";
 
 const router = createBrowserRouter([
   {
@@ -48,6 +49,17 @@ const router = createBrowserRouter([
         element: (
           <PrivateRouter>
             <MyPackages></MyPackages>
+          </PrivateRouter>
+        ),
+        hydrateFallbackElement: <Loading></Loading>,
+      },
+      {
+        path: "/update-myPackages/:id",
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/packages/${params.id}`),
+        element: (
+          <PrivateRouter>
+            <UpdatePackages></UpdatePackages>
           </PrivateRouter>
         ),
         hydrateFallbackElement: <Loading></Loading>,

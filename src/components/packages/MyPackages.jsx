@@ -37,7 +37,7 @@ const MyPackages = () => {
               });
             }
             const remainingPackages = myPackages?.filter(
-              (recipe) => recipe._id !== id
+              (myPackage) => myPackage._id !== id
             );
             setMyPackages(remainingPackages);
             // window.location.reload();
@@ -52,27 +52,33 @@ const MyPackages = () => {
         <h1 className="text-2xl font-bold text-center mb-6 text-gray-800">
           Manage My Packages
         </h1>
-        <div className="overflow-x-auto bg-white shadow-md rounded-lg">
-          <table className="min-w-full text-sm text-gray-600">
-            <thead className="hidden sm:table-header-group">
-              <tr className="bg-gray-200 text-gray-600 uppercase text-xs sm:text-sm">
-                <th className="py-3 px-4 text-left">Image</th>
-                <th className="py-3 px-4 text-left">Tour Name</th>
-                <th className="py-3 px-4 text-left">Guide Name</th>
-                <th className="py-3 px-4 flex justify-center">Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {myPackages.map((myPackage) => (
-                <MyPackagesTable
-                  key={myPackage._id}
-                  myPackage={myPackage}
-                  handleDelete={handleDelete}
-                ></MyPackagesTable>
-              ))}
-            </tbody>
-          </table>
-        </div>
+
+        {myPackages.length < 1 ? (
+          <h3 className="text-center font-semibold">No Packages Found</h3>
+        ) : (
+          <div className="overflow-x-auto bg-white shadow-md rounded-lg">
+            <table className="min-w-full text-sm text-gray-600">
+              <thead className="hidden sm:table-header-group">
+                <tr className="bg-gray-200 text-gray-600 uppercase text-xs sm:text-sm">
+                  <th className="py-3 px-4 text-left">Image</th>
+                  <th className="py-3 px-4 text-left">Tour Name</th>
+                  <th className="py-3 px-4 text-left">Guide Name</th>
+                  <th className="py-3 px-4 flex justify-center">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {myPackages.map((myPackage) => (
+                  <MyPackagesTable
+                    key={myPackage._id}
+                    myPackage={myPackage}
+                    setMyPackages={setMyPackages}
+                    handleDelete={handleDelete}
+                  ></MyPackagesTable>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
       </div>
     </div>
   );
