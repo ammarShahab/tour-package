@@ -3,7 +3,7 @@ import { createBrowserRouter } from "react-router";
 import RootLayout from "./layouts/RootLayout";
 import Home from "./components/Home";
 import AddPackage from "./components/packages/AddPackage";
-import MyRecipes from "./components/packages/MyRecipes";
+import MyRecipes from "./components/packages/MyPackages";
 import LogIn from "./components/LogIn";
 import Register from "./components/Register";
 import AuthLayout from "./layouts/AuthLayout";
@@ -11,9 +11,11 @@ import Error404 from "./components/Error404";
 import PrilvateRouter from "./components/provider/PrivateRouter";
 import PrivateRouter from "./components/provider/PrivateRouter";
 import Loading from "./components/Loading";
-import RecipeDetails from "./components/RecipeDetails";
+import RecipeDetails from "./components/PackageDetails";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import AllPackages from "./components/packages/AllPackages";
+import PackageDetails from "./components/PackageDetails";
+import MyPackages from "./components/packages/MyPackages";
 
 const router = createBrowserRouter([
   {
@@ -29,26 +31,28 @@ const router = createBrowserRouter([
       },
       { path: "/add-package", element: <AddPackage></AddPackage> },
       {
-        path: "/myrecipes/:email",
+        path: "/packages/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/recipes-email/${params.email}`),
+          fetch(`http://localhost:3000/packages/${params.id}`),
         element: (
           <PrivateRouter>
-            <MyRecipes></MyRecipes>
-          </PrivateRouter>
-        ),
-      },
-      {
-        path: "/recipe/:id",
-        loader: ({ params }) =>
-          fetch(`http://localhost:3000/recipes/${params.id}`),
-        element: (
-          <PrivateRouter>
-            <RecipeDetails></RecipeDetails>
+            <PackageDetails></PackageDetails>
           </PrivateRouter>
         ),
         hydrateFallbackElement: <Loading></Loading>,
       },
+      {
+        path: "/manage-myPackages/:email",
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/manage-myPackages/${params.email}`),
+        element: (
+          <PrivateRouter>
+            <MyPackages></MyPackages>
+          </PrivateRouter>
+        ),
+        hydrateFallbackElement: <Loading></Loading>,
+      },
+
       { path: "/privacy-policy", Component: PrivacyPolicy },
     ],
   },

@@ -145,7 +145,7 @@ const NavBar = () => {
                     {user && (
                       <NavLink
                         // className="py-3"
-                        to={`/manage-my-packages/${user?.email}`}
+                        to={`/manage-myPackages/${user?.email}`}
                       >
                         Manage My Packages
                       </NavLink>
