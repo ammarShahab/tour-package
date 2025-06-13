@@ -40,7 +40,7 @@ const MyPackages = () => {
               (myPackage) => myPackage._id !== id
             );
             setMyPackages(remainingPackages);
-            // window.location.reload();
+            window.location.reload();
           });
       }
     });

@@ -42,6 +42,7 @@ const AddPackage = () => {
             draggable: true,
           });
           form.reset();
+          window.location.reload();
         }
       });
   };
