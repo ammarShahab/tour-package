@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useLoaderData } from "react-router";
 import Swal from "sweetalert2";
+import MyPackagesTable from "./MyPackagesTable";
 
 const MyPackages = () => {
   const data = useLoaderData();
@@ -45,7 +46,32 @@ const MyPackages = () => {
     });
   };
 
-  return <p>{myPackages.length} packages</p>;
+  return (
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
+      <div className="w-full max-w-4xl mx-auto">
+        <h1 className="text-2xl font-bold text-center mb-6 text-gray-800">
+          Manage My Packages
+        </h1>
+        <div className="overflow-x-auto bg-white shadow-md rounded-lg">
+          <table className="min-w-full text-sm text-gray-600">
+            <thead className="hidden sm:table-header-group">
+              <tr className="bg-gray-200 text-gray-600 uppercase text-xs sm:text-sm">
+                <th className="py-3 px-4 text-left">Image</th>
+                <th className="py-3 px-4 text-left">Tour Name</th>
+                <th className="py-3 px-4 text-left">Guide Name</th>
+                <th className="py-3 px-4 text-center">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {myPackages.map((myPackage) => (
+                <MyPackagesTable myPackage={myPackage}></MyPackagesTable>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default MyPackages;
