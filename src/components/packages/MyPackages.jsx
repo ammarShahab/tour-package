@@ -22,7 +22,7 @@ const MyPackages = () => {
     }).then((result) => {
       // console.log(result.isConfirmed);
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/recipes/${id}`, {
+        fetch(`http://localhost:3000/packages/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -32,15 +32,15 @@ const MyPackages = () => {
             if (data.deletedCount) {
               Swal.fire({
                 title: "Deleted!",
-                text: "Your item has been deleted.",
+                text: "Your package has been deleted.",
                 icon: "success",
               });
             }
-            const remainingRecipes = myPackages?.filter(
+            const remainingPackages = myPackages?.filter(
               (recipe) => recipe._id !== id
             );
-            setIsDelete(remainingRecipes);
-            window.location.reload();
+            setMyPackages(remainingPackages);
+            // window.location.reload();
           });
       }
     });
@@ -64,7 +64,11 @@ const MyPackages = () => {
             </thead>
             <tbody>
               {myPackages.map((myPackage) => (
-                <MyPackagesTable myPackage={myPackage}></MyPackagesTable>
+                <MyPackagesTable
+                  key={myPackage._id}
+                  myPackage={myPackage}
+                  handleDelete={handleDelete}
+                ></MyPackagesTable>
               ))}
             </tbody>
           </table>
