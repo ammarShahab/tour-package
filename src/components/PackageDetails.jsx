@@ -82,7 +82,7 @@ const PackageDetails = () => {
         <Link to={`/apply-booking/${_id}`}>
           <button
             // href="#book"
-            className="block w-full max-w-xs mx-auto mt-5 py-3 bg-green-600 text-white text-center rounded-md font-semibold text-sm md:text-base hover:bg-green-700 transition-colors"
+            className="block w-full max-w-xs mx-auto mt-5 py-3 bg-[#fe8d02] hover:bg-yellow-500  transition-colors text-white text-center rounded-md font-semibold text-sm md:text-base "
           >
             Book Now
           </button>

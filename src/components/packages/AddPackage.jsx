@@ -259,7 +259,7 @@ const AddPackage = () => {
           </div>
           <button
             type="submit"
-            className="w-full py-2 bg-[#fe8d02] text-white rounded-md hover:bg-[#fe5602] transition-colors text-base sm:text-lg font-medium"
+            className="w-full py-2 bg-[#fe8d02] text-white rounded-md hover:bg-yellow-500  transition-colors text-base sm:text-lg font-medium"
           >
             Submit Package
           </button>

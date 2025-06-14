@@ -1,5 +1,5 @@
 import React, { use, useState } from "react";
-import { useLoaderData, useParams } from "react-router";
+import { useLoaderData, useNavigate, useParams } from "react-router";
 import AuthContext from "../context/AuthContext";
 import axios from "axios";
 import Swal from "sweetalert2";
@@ -7,6 +7,8 @@ import Swal from "sweetalert2";
 const ApplyBooking = () => {
   const data = useLoaderData();
   console.log(data);
+
+  const navigate = useNavigate();
 
   const { id } = useParams();
   console.log(id);
@@ -27,13 +29,14 @@ const ApplyBooking = () => {
 
     const bookings = {
       packageImage: data?.image,
-      clientEmail: user?.email,
+      buyerEmail: user?.email,
       packageId: id,
       guideName: data?.guide_name,
       guideContactNumber: data?.guide_contact_no,
       departureDate: data?.departure_date,
       departureLocation: data?.departure_location,
       destination: data?.destination,
+      tourName: data?.tour_name,
       bookingDate: booking_date,
       specialNote: special_note,
       status: "pending",
@@ -50,6 +53,7 @@ const ApplyBooking = () => {
             icon: "success",
             draggable: true,
           });
+          navigate("/allPackages");
         }
       })
       .catch((error) => {
@@ -164,8 +168,7 @@ const ApplyBooking = () => {
           </div>
           <button
             type="submit"
-            // onClick={handleSubmit}
-            className="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 text-lg font-medium"
+            className="w-full bg-[#fe8d02] hover:bg-yellow-500 transition-colors text-white py-2 px-4 rounded-md  focus:outline-none focus:ring-2 focus:ring-green-500 text-lg font-medium"
           >
             Book Now
           </button>

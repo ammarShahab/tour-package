@@ -39,7 +39,8 @@ const NavBar = () => {
       {user && (
         <NavLink
           className="text-md py-3 px-2 rounded-lg font-bold"
-          to={`/my-bookings/${user?.email}`}
+          // to={`/my-bookings/${user?.email}`}
+          to="/my-bookings"
         >
           My Bookings
         </NavLink>
