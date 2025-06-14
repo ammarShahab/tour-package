@@ -20,8 +20,6 @@ const MyBookings = () => {
   }, [user]);
   console.log(bookings);
 
-  const [tourData, setTourData] = useState(bookings);
-
   const handleConfirmBooking = (bookingId) => {
     console.log(bookingId);
 
@@ -37,8 +35,13 @@ const MyBookings = () => {
             icon: "success",
             draggable: true,
           });
-
-          //   window.location.reload();
+          setBookings(
+            bookings.map((booking) =>
+              booking._id === bookingId
+                ? { ...booking, status: "completed" }
+                : booking
+            )
+          );
         }
       })
       .catch((error) => {

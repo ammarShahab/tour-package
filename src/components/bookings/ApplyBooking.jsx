@@ -53,7 +53,7 @@ const ApplyBooking = () => {
             icon: "success",
             draggable: true,
           });
-          navigate("/allPackages");
+          navigate("/my-bookings");
         }
       })
       .catch((error) => {
