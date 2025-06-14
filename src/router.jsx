@@ -19,6 +19,7 @@ import MyPackages from "./components/packages/MyPackages";
 import UpdatePackages from "./components/packages/UpdatePackages";
 import ApplyBooking from "./components/bookings/ApplyBooking";
 import MyBookings from "./components/bookings/MyBookings";
+import AboutUs from "./components/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -90,6 +91,7 @@ const router = createBrowserRouter([
       },
 
       { path: "/privacy-policy", Component: PrivacyPolicy },
+      { path: "/about-us", Component: AboutUs },
     ],
   },
   {
