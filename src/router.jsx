@@ -17,6 +17,7 @@ import AllPackages from "./components/packages/AllPackages";
 import PackageDetails from "./components/PackageDetails";
 import MyPackages from "./components/packages/MyPackages";
 import UpdatePackages from "./components/packages/UpdatePackages";
+import ApplyBooking from "./components/bookings/ApplyBooking";
 
 const router = createBrowserRouter([
   {
@@ -60,6 +61,17 @@ const router = createBrowserRouter([
         element: (
           <PrivateRouter>
             <UpdatePackages></UpdatePackages>
+          </PrivateRouter>
+        ),
+        hydrateFallbackElement: <Loading></Loading>,
+      },
+      {
+        path: "/apply-booking/:id",
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/packages/${params.id}`),
+        element: (
+          <PrivateRouter>
+            <ApplyBooking></ApplyBooking>
           </PrivateRouter>
         ),
         hydrateFallbackElement: <Loading></Loading>,

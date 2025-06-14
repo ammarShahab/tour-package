@@ -132,8 +132,6 @@ const AddPackage = () => {
               type="text"
               id="destination"
               name="destination"
-              /* value={formData.destination}
-              onChange={handleChange} */
               className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base"
               required
             />
@@ -149,8 +147,6 @@ const AddPackage = () => {
               type="number"
               id="price"
               name="price"
-              /* value={formData.price}
-              onChange={handleChange} */
               min="0"
               step="0.01"
               className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base"
@@ -168,8 +164,6 @@ const AddPackage = () => {
               type="date"
               id="departure_date"
               name="departure_date"
-              /* value={formData.departure_date}
-              onChange={handleChange} */
               className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base"
               required
             />
@@ -184,8 +178,6 @@ const AddPackage = () => {
             <textarea
               id="package_details"
               name="package_details"
-              /* value={formData.package_details}
-              onChange={handleChange} */
               className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base"
               rows="4"
               required
