@@ -12,7 +12,7 @@ const MyPackages = () => {
   const handleDelete = (id) => {
     // console.log(id);
     Swal.fire({
-      title: "Are you sure?",
+      title: "Are you sure delete your package?",
       text: "You won't be able to revert this!",
       icon: "warning",
       showCancelButton: true,
@@ -47,7 +47,7 @@ const MyPackages = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
+    <div className="min-h-4/6 bg-gray-100 flex items-center justify-center p-4">
       <div className="w-full max-w-4xl mx-auto">
         <h1 className="text-2xl font-bold text-center mb-6 text-gray-800">
           Manage My Packages

@@ -55,55 +55,64 @@ const MyBookings = () => {
         My Booking Information
       </h1>
       <div className="overflow-x-auto">
-        <table className="min-w-full bg-white border border-gray-300">
-          <thead>
-            <tr className="bg-gray-200 text-gray-600 text-sm leading-normal">
-              <th className="py-3 px-6 text-left">Sl. No.</th>
-              <th className="py-3 px-6 text-left">Tour Name</th>
-              <th className="py-3 px-6 text-left">Guide Name & Contact</th>
-              <th className="py-3 px-6 text-left">Departure Date</th>
-              <th className="py-3 px-6 text-left">Departure Location</th>
-              <th className="py-3 px-6 text-left">Destination</th>
-              <th className="py-3 px-6 text-left">Special Note</th>
-              <th className="py-3 px-6 text-center">Action</th>
-            </tr>
-          </thead>
-          <tbody className="text-gray-600 text-sm">
-            {bookings.map((booking, index) => (
-              <tr
-                key={booking._id}
-                className="border-b border-gray-200 hover:bg-gray-100"
-              >
-                <td className="py-3 px-6">{index + 1}</td>
-                <td className="py-3 px-6">{booking.tourName}</td>
-                <td className="py-3 px-6">
-                  {booking.guideName}
-                  <br />+{booking.guideContactNumber}
-                </td>
-                <td className="py-3 px-6">{booking.departureDate}</td>
-                <td className="py-3 px-6">{booking.departureLocation}</td>
-                <td className="py-3 px-6">{booking.destination}</td>
-                <td className="py-3 px-6">{booking.specialNote}</td>
-                <td className="py-3 px-6 text-center">
-                  <button
-                    onClick={() => {
-                      handleConfirmBooking(booking._id);
-                      booking.status === "completed";
-                    }}
-                    disabled={booking.status === "completed"}
-                    className={`font-bold py-2 px-4 rounded ${
-                      booking.status === "completed"
-                        ? "bg-gray-500 cursor-not-allowed"
-                        : "bg-blue-500 hover:bg-blue-700 text-white"
-                    }`}
-                  >
-                    {booking.status === "completed" ? "Confirmed" : "Confirm"}
-                  </button>
-                </td>
+        {bookings.length < 1 ? (
+          <div className="max-h-screen flex justify-center w-full mt-20">
+            <h3 className="text-center font-semibold text-2xl">
+              No Bookings Found
+            </h3>
+          </div>
+        ) : (
+          <table className="min-w-full bg-white border border-gray-300">
+            <thead>
+              <tr className="bg-gray-200 text-gray-600 text-sm leading-normal">
+                <th className="py-3 px-6 text-left">Sl. No.</th>
+                <th className="py-3 px-6 text-left">Tour Name</th>
+                <th className="py-3 px-6 text-left">Guide Name & Contact</th>
+                <th className="py-3 px-6 text-left">Departure Date</th>
+                <th className="py-3 px-6 text-left">Departure Location</th>
+                <th className="py-3 px-6 text-left">Destination</th>
+                <th className="py-3 px-6 text-left">Special Note</th>
+                <th className="py-3 px-6 text-center">Action</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+
+            <tbody className="text-gray-600 text-sm">
+              {bookings.map((booking, index) => (
+                <tr
+                  key={booking._id}
+                  className="border-b border-gray-200 hover:bg-gray-100"
+                >
+                  <td className="py-3 px-6">{index + 1}</td>
+                  <td className="py-3 px-6">{booking.tourName}</td>
+                  <td className="py-3 px-6">
+                    {booking.guideName}
+                    <br />+{booking.guideContactNumber}
+                  </td>
+                  <td className="py-3 px-6">{booking.departureDate}</td>
+                  <td className="py-3 px-6">{booking.departureLocation}</td>
+                  <td className="py-3 px-6">{booking.destination}</td>
+                  <td className="py-3 px-6">{booking.specialNote}</td>
+                  <td className="py-3 px-6 text-center">
+                    <button
+                      onClick={() => {
+                        handleConfirmBooking(booking._id);
+                        booking.status === "completed";
+                      }}
+                      disabled={booking.status === "completed"}
+                      className={`font-bold py-2 px-4 rounded ${
+                        booking.status === "completed"
+                          ? "bg-gray-500 cursor-not-allowed"
+                          : "bg-blue-500 hover:bg-blue-700 text-white"
+                      }`}
+                    >
+                      {booking.status === "completed" ? "Confirmed" : "Confirm"}
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
       </div>
     </div>
   );
