@@ -1,0 +1,94 @@
+import React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+const GalleryCarousel = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    arrows: true,
+    centerMode: true,
+    centerPadding: "20px",
+    responsive: [
+      {
+        breakpoint: 1280, // xl screens
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          centerPadding: "20px",
+        },
+      },
+      {
+        breakpoint: 1024, // lg screens (tablets, small laptops)
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          centerPadding: "15px",
+        },
+      },
+      {
+        breakpoint: 768, // md screens (tablets, large phones)
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerPadding: "10px",
+        },
+      },
+      {
+        breakpoint: 640, // sm screens (phones)
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerPadding: "5px",
+          arrows: false, // Hide arrows on small screens for cleaner UI
+        },
+      },
+    ],
+  };
+
+  const images = [
+    "https://i.ibb.co/jPjsSm3d/pexels-rushow-122107.jpg",
+    "https://i.ibb.co/gZ4dxSXk/pexels-simanta-datta-819074-1693453.jpg",
+    "https://i.ibb.co/WpHy2PZ1/pexels-md-towhidul-islam-175863-3013018.jpg",
+    "https://i.ibb.co/qYrThtCF/pexels-arifulhb-3675856.jpg",
+    "https://i.ibb.co/6RfN0XfW/pexels-habib-sohan-2141615-3938188.jpg",
+    "https://i.ibb.co/6JXBb48h/pexels-abhilash-8000042.jpg",
+    "https://i.ibb.co/1tD4FbPp/pexels-inaya-7269564.jpg",
+    "https://i.ibb.co/PvkS3T4d/pexels-the-ahnafpiash-11241512-1.jpg",
+  ];
+  return (
+    <section className="py-6 sm:py-8 md:py-10 lg:py-12 bg-gray-100">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-4 sm:mb-6">
+          Moments in Motion
+        </h2>
+        <p className="text-base sm:text-lg md:text-xl text-center mb-6 sm:mb-8 max-w-3xl mx-auto">
+          Dive into a carousel of cherished memories. Each frame captures a
+          unique story waiting to be explored. Let these images take you on a
+          visual journey.
+        </p>
+        <div className="max-w-full sm:max-w-4xl lg:max-w-5xl mx-auto">
+          <Slider {...settings}>
+            {images.map((image, index) => (
+              <div key={index} className="px-1 sm:px-2">
+                <img
+                  src={image}
+                  alt={`Slide ${index + 1}`}
+                  className="w-full h-48 sm:h-64 md:h-80 lg:h-96 object-cover rounded-lg shadow-md"
+                />
+              </div>
+            ))}
+          </Slider>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default GalleryCarousel;

@@ -5,6 +5,7 @@ import Banner from "./shared/Banner";
 import FeaturedPackages from "./shared/FeaturedPackages";
 import { Suspense, use } from "react";
 import AuthContext from "./context/AuthContext";
+import GalleryCarousel from "./shared/GalleryCarousel";
 
 const featuredPackagesPromise = fetch(
   "http://localhost:3000/featured-packages"
@@ -20,6 +21,7 @@ const Home = () => {
           featuredPackagesPromise={featuredPackagesPromise}
         ></FeaturedPackages>
       </Suspense>
+      <GalleryCarousel></GalleryCarousel>
       <RecipeHighlights></RecipeHighlights>
       <NewsLetter></NewsLetter>
     </>

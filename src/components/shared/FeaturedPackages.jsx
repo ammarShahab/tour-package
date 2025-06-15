@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import { Typewriter } from "react-simple-typewriter";
 import AuthContext from "../context/AuthContext";
 import PackageCard from "./PackageCard";
+import FeaturedPackageCard from "./FeaturedPackageCard";
 
 const FeaturedPackages = ({ featuredPackagesPromise }) => {
   const { setIsLoading, theme } = use(AuthContext);
@@ -18,7 +19,7 @@ const FeaturedPackages = ({ featuredPackagesPromise }) => {
 
   return (
     <div
-      className={`max-w-7xl mx-auto px-4 py-6 mt-10 mb-20 bg-lime-100 p-4 rounded-2xl ${
+      className={`max-w-7xl mx-auto px-4 py-6 mt-10 mb-20 bg-[#A08963] p-4 rounded-2xl ${
         theme ? "dark" : ""
       }  dark:bg-zinc-600`}
     >
@@ -42,11 +43,11 @@ const FeaturedPackages = ({ featuredPackagesPromise }) => {
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
         {featuredPackages.map((tourPackage) => (
-          <PackageCard
+          <FeaturedPackageCard
             key={tourPackage._id}
             tourPackage={tourPackage}
             handleViewDetails={handleViewDetails}
-          ></PackageCard>
+          ></FeaturedPackageCard>
         ))}
       </div>
       <Link to="/allPackages">
