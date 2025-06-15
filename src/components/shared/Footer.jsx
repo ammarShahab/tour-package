@@ -9,7 +9,11 @@ const Footer = () => {
   const { theme, setTheme } = useContext(AuthContext);
   return (
     <>
-      <div className={`${theme ? "dark" : ""}  dark:bg-zinc-600 bg-[#147073]`}>
+      <div
+        className={`${
+          theme ? "dark" : ""
+        }  dark:bg-zinc-600 bg-[#147073] max-h-screen`}
+      >
         <div
           className={`flex flex-col justify-between py-10 px-2 mx-auto space-y-8 lg:flex-row lg:space-y-0 text-gray-800 ${
             theme ? "dark" : ""

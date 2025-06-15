@@ -1,11 +1,9 @@
-import RecipeHighlights from "./packages/RecipeHighlights";
-import NewsLetter from "./shared/NewsLetter";
-
 import Banner from "./shared/Banner";
 import FeaturedPackages from "./shared/FeaturedPackages";
 import { Suspense, use } from "react";
 import AuthContext from "./context/AuthContext";
 import GalleryCarousel from "./shared/GalleryCarousel";
+import WhyChooseUs from "./shared/WhyChooseUs";
 
 const featuredPackagesPromise = fetch(
   "http://localhost:3000/featured-packages"
@@ -22,8 +20,7 @@ const Home = () => {
         ></FeaturedPackages>
       </Suspense>
       <GalleryCarousel></GalleryCarousel>
-      <RecipeHighlights></RecipeHighlights>
-      <NewsLetter></NewsLetter>
+      <WhyChooseUs></WhyChooseUs>
     </>
   );
 };

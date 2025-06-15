@@ -7,14 +7,14 @@ const GalleryCarousel = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 300,
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2000,
     arrows: true,
     centerMode: true,
-    centerPadding: "20px",
+    centerPadding: "0px",
     responsive: [
       {
         breakpoint: 1280, // xl screens
@@ -63,12 +63,12 @@ const GalleryCarousel = () => {
     "https://i.ibb.co/PvkS3T4d/pexels-the-ahnafpiash-11241512-1.jpg",
   ];
   return (
-    <section className="py-6 sm:py-8 md:py-10 lg:py-12 bg-gray-100">
+    <section className="py-6 sm:py-8 md:py-10 lg:py-12 bg-[#007073] mb-36 font-bitter">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-4 sm:mb-6">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-4 sm:mb-6 text-white">
           Moments in Motion
         </h2>
-        <p className="text-base sm:text-lg md:text-xl text-center mb-6 sm:mb-8 max-w-3xl mx-auto">
+        <p className="text-base sm:text-lg md:text-xl text-center mb-6 sm:mb-8 max-w-3xl mx-auto text-white">
           Dive into a carousel of cherished memories. Each frame captures a
           unique story waiting to be explored. Let these images take you on a
           visual journey.

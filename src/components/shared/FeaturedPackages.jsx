@@ -19,20 +19,14 @@ const FeaturedPackages = ({ featuredPackagesPromise }) => {
 
   return (
     <div
-      className={`max-w-7xl mx-auto px-4 py-6 mt-10 mb-20 bg-[#A08963] p-4 rounded-2xl ${
+      className={`max-w-7xl mx-auto px-4 py-6 mt-10 mb-20 bg-[#84A7A1] p-4 rounded-2xl ${
         theme ? "dark" : ""
       }  dark:bg-zinc-600`}
     >
-      <h1 className="text-5xl font-bold mb-6 font-bitter text-center text-amber-950 dark:text-white">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-bitter text-center text-amber-950 dark:text-white">
         Our
         <Typewriter
-          words={[
-            " Featured Packages",
-            /* " Tastes to Try",
-            " Culinary Picks",
-            " Dish Delights",
-            " featuredPackages", */
-          ]}
+          words={[" Featured Packages"]}
           loop={true}
           cursor
           cursorStyle="_"
@@ -51,7 +45,7 @@ const FeaturedPackages = ({ featuredPackagesPromise }) => {
         ))}
       </div>
       <Link to="/allPackages">
-        <button className="block mx-auto mt-6 bg-green-500 text-white px-6 py-3 rounded-md text-lg hover:bg-green-600 transition">
+        <button className="block mx-auto mt-6 bg-[#A27B5C] text-white px-6 py-3 rounded-md text-lg hover:bg-[#ff8d03] transition">
           See All Packages
         </button>
       </Link>
