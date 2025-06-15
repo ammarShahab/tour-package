@@ -2,7 +2,7 @@ import React, { use } from "react";
 import AuthContext from "../context/AuthContext";
 import { Link } from "react-router";
 
-const PackageCard = ({ tourPackage }) => {
+const PackageCard = ({ tourPackage, search }) => {
   const { setIsLoading, theme } = use(AuthContext);
   return (
     <div

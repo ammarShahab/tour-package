@@ -1,14 +1,29 @@
-import React, { Suspense, use } from "react";
+import React, { Suspense, use, useEffect, useState } from "react";
 import AuthContext from "../context/AuthContext";
 import PackageCard from "../shared/PackageCard";
+import { data } from "react-router";
 
-const allPackagesPromise = fetch("http://localhost:3000/packages").then((res) =>
+/* const allPackagesPromise = fetch("http://localhost:3000/packages").then((res) =>
   res.json()
-);
+); */
 
 const AllPackages = () => {
   const { isLoading } = use(AuthContext);
-  const tourPackages = use(allPackagesPromise);
+  const [tourPackages, setTourPackages] = useState([]);
+  const [search, setSearch] = useState("");
+
+  console.log(search);
+
+  useEffect(() => {
+    fetch(`http://localhost:3000/packages?searchParams=${search}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setTourPackages(data);
+      });
+  }, [search]);
+
+  // const tourPackages = use(allPackagesPromise);
   console.log(tourPackages, isLoading);
 
   return (
@@ -21,7 +36,13 @@ const AllPackages = () => {
           <legend className="fieldset-legend text-2xl">
             Search Your Package Here
           </legend>
-          <input type="text" className="input" placeholder="Type here" />
+          <input
+            type="text"
+            name="search"
+            className="input"
+            placeholder="Type here"
+            onChange={(e) => setSearch(e.target.value)}
+          />
         </fieldset>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
@@ -30,6 +51,7 @@ const AllPackages = () => {
             <PackageCard
               key={tourPackage._id}
               tourPackage={tourPackage}
+              search={search}
             ></PackageCard>
           </Suspense>
         ))}
