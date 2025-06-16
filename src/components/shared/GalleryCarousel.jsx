@@ -2,6 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { motion } from "motion/react";
 
 const GalleryCarousel = () => {
   const settings = {
@@ -65,9 +66,16 @@ const GalleryCarousel = () => {
   return (
     <section className="py-6 sm:py-8 md:py-10 lg:py-12 bg-[#007073] mb-36 font-bitter">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-4 sm:mb-6 text-white">
+        <motion.h2
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-4 sm:mb-6 text-white"
+          animate={{
+            color: ["#3ED6B5", "#B2F1F0", "#00B2A9", "#006769", "#114232"],
+            transition: { duration: 5, repeat: Infinity },
+          }}
+        >
           Moments in Motion
-        </h2>
+        </motion.h2>
+
         <p className="text-base sm:text-lg md:text-xl text-center mb-6 sm:mb-8 max-w-3xl mx-auto text-white">
           Dive into a carousel of cherished memories. Each frame captures a
           unique story waiting to be explored. Let these images take you on a

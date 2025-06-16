@@ -4,6 +4,7 @@ import { Typewriter } from "react-simple-typewriter";
 import AuthContext from "../context/AuthContext";
 import PackageCard from "./PackageCard";
 import FeaturedPackageCard from "./FeaturedPackageCard";
+import TextAnimation from "../animation/TextAnimation";
 
 const FeaturedPackages = ({ featuredPackagesPromise }) => {
   const { setIsLoading, theme } = use(AuthContext);
@@ -24,7 +25,8 @@ const FeaturedPackages = ({ featuredPackagesPromise }) => {
       }  dark:bg-zinc-600`}
     >
       <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-bitter text-center text-amber-950 dark:text-white">
-        Our
+        <TextAnimation></TextAnimation>
+        {/* Our
         <Typewriter
           words={[" Featured Packages"]}
           loop={true}
@@ -33,7 +35,7 @@ const FeaturedPackages = ({ featuredPackagesPromise }) => {
           typeSpeed={70}
           deleteSpeed={50}
           delaySpeed={1000}
-        ></Typewriter>
+        ></Typewriter> */}
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
         {featuredPackages.map((tourPackage) => (

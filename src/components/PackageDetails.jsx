@@ -44,9 +44,9 @@ const PackageDetails = () => {
             <h4 className="text-sm md:text-xl font-semibold text-gray-700 mr-2">
               {guide_name}
             </h4>
-            <p className="text-gray-600 text-sm md:text-xl font-semibold">
+            <p className="text-gray-600 text-sm md:text-xl">
               <span className="font-semibold">Contact:</span> +
-              {guide_contact_no}
+              <span className="font-normal">{guide_contact_no}</span>
             </p>
           </div>
         </div>
