@@ -20,6 +20,7 @@ const ApplyBooking = () => {
   const currentDate = new Date(timeStamp);
 
   const [specialNote, setSpecialNote] = useState("");
+  const [packages, setPackages] = useState(data);
 
   const handleBooking = (e) => {
     e.preventDefault();
@@ -47,6 +48,10 @@ const ApplyBooking = () => {
       .post(`http://localhost:3000/bookings/${id}`, bookings)
       .then((res) => {
         console.log(res.data);
+        setPackages((prev) => {
+          console.log(prev);
+          return { ...prev, bookingCount: prev.bookingCount + 1 };
+        });
         if (res.data.insertedId) {
           Swal.fire({
             title: "Your Booking has been added successfully.",
