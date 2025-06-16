@@ -24,7 +24,7 @@ const FeaturedPackages = ({ featuredPackagesPromise }) => {
         theme ? "dark" : ""
       }  dark:bg-zinc-600`}
     >
-      <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-bitter text-center text-amber-950 dark:text-white">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-bitter text-center text-[#DCC6E0] dark:text-white">
         <TextAnimation></TextAnimation>
         {/* Our
         <Typewriter

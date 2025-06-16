@@ -1,15 +1,18 @@
 import React, { use } from "react";
 import AuthContext from "../context/AuthContext";
 import { Link } from "react-router";
+import { motion } from "motion/react";
 
 const FeaturedPackageCard = ({ tourPackage }) => {
   const { setIsLoading, theme } = use(AuthContext);
 
   return (
-    <div
+    <motion.div
       className={`bg-white rounded-lg shadow-md overflow-hidden text-center p-4 ${
         theme ? "dark" : ""
       }  dark:bg-zinc-400`}
+      whileHover={{ scale: 1.1 }}
+      // whileTap={{ scale: 0.5 }}
     >
       <img
         src={tourPackage.image}
@@ -45,7 +48,7 @@ const FeaturedPackageCard = ({ tourPackage }) => {
           View Details
         </button>
       </Link>
-    </div>
+    </motion.div>
   );
 };
 
