@@ -78,7 +78,6 @@ const Register = () => {
             <input
               type="text"
               name="name"
-              //   onChange={(e) => setName(e.target.value)}
               className="w-full px-4 py-2 mt-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
@@ -90,7 +89,6 @@ const Register = () => {
             <input
               type="email"
               name="email"
-              //   onChange={(e) => setEmail(e.target.value)}
               className="w-full px-4 py-2 mt-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
@@ -102,7 +100,6 @@ const Register = () => {
             <input
               type="text"
               name="photoURL"
-              //   onChange={(e) => setPhotoURL(e.target.value)}
               className="w-full px-4 py-2 mt-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>

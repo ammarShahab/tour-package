@@ -68,8 +68,6 @@ const AddPackage = () => {
               type="text"
               id="tour_name"
               name="tour_name"
-              // value={formData.tour_name}
-              // onChange={handleChange}
               className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base dark:text-white"
               required
             />
@@ -85,8 +83,6 @@ const AddPackage = () => {
               type="text"
               id="image"
               name="image"
-              /* value={formData.image}
-              onChange={handleChange} */
               placeholder="https://example.com/image.jpg"
               className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base dark:text-white"
             />
@@ -102,8 +98,6 @@ const AddPackage = () => {
               type="text"
               id="duration"
               name="duration"
-              /*  value={formData.duration}
-              onChange={handleChange} */
               className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base dark:text-white"
               required
             />
@@ -119,8 +113,6 @@ const AddPackage = () => {
               type="text"
               id="departure_location"
               name="departure_location"
-              /*  value={formData.departure_location}
-              onChange={handleChange} */
               className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base dark:text-white"
               required
             />
@@ -251,7 +243,6 @@ const AddPackage = () => {
               id="guide_email"
               name="guide_email"
               defaultValue={user?.email}
-              // onChange={handleChange}
               className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base dark:text-white"
               readOnly
               required

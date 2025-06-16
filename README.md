@@ -1,56 +1,54 @@
-# 🍽️ Dish Diary
+# 🌍 Trip Nest
 
-**Dish Diary** is a user-friendly Recipe Book App where users can manage their own recipes, discover recipes shared by others, add favorites to a wishlist, and like recipes. The app features a dynamic "Top Recipes" section based on likes, offering an engaging experience for food lovers.
+Trip Nest is a full-stack travel package booking platform designed to help users explore and book exciting tour packages with ease. This project focuses on delivering a user-friendly, visually appealing, and responsive interface built using the modern React ecosystem.
 
-🔗 **Live Site:** [https://b11a10-client-side-ashahab007.web.app/](https://b11a10-client-side-ashahab007.web.app/)
+## ✨ Live Website
 
----
-
-## 📌 Features
-
-- ✅ **Add, Edit & Delete Recipes**
-- 🔍 **Browse Recipes by Others**
-- ❤️ **Like & Wishlist Functionality**
-- ⭐ **Top Recipes Section**
-- 🔐 **User Authentication (Firebase)**
-- 📱 **Responsive Design with Tailwind CSS + DaisyUI**
-- 🚀 **Fast & Optimized using Vite**
+🔗 [Visit Trip Nest](https://your-tripnest-client-url.com)
 
 ---
 
-## 🛠️ Tech Stack
+## 🚀 Features
 
-### Frontend:
-
-- [React](https://reactjs.org/) ^19.1.0
-- [React Router](https://reactrouter.com/) ^7.6.0
-- [Tailwind CSS](https://tailwindcss.com/) ^4.1.7
-- [DaisyUI](https://daisyui.com/) ^5.0.35
-- [Preline](https://preline.co/) ^3.0.1
-
-### Tools & Libraries:
-
-- [Firebase](https://firebase.google.com/) ^11.7.3
-- [React Icons](https://react-icons.github.io/react-icons/)
-- [React CountUp](https://www.npmjs.com/package/react-countup)
-- [React Tooltip](https://www.npmjs.com/package/react-tooltip)
-- [React Simple Typewriter](https://www.npmjs.com/package/react-simple-typewriter)
-- [SweetAlert2](https://sweetalert2.github.io/)
-- [React Hot Toast](https://react-hot-toast.com/)
-
-### Build Tools:
-
-- [Vite](https://vitejs.dev/) ^6.3.5
-- [ESLint](https://eslint.org/)
-- [@vitejs/plugin-react](https://www.npmjs.com/package/@vitejs/plugin-react)
+- 🔐 Firebase Authentication (Email & Social Logins)
+- 🧭 Dynamic Route Management with React Router v7
+- 🎠 Interactive Sliders and Carousels (React Slick & Multi-Carousel)
+- 📊 Animated Counters & Stats (React CountUp)
+- 🍞 Toast Notifications (React Hot Toast)
+- 🍭 Sweet Alerts for Confirmation Prompts
+- 📜 Typewriter Effects for Catchy Headlines
+- 🛠️ Responsive and Styled using Tailwind CSS & DaisyUI
+- ✨ Smooth Animations with Framer Motion and GSAP
 
 ---
 
-## 🚀 Getting Started
+## 🛠️ Technologies Used
 
-### 1. Clone the repository
+### 🔧 Front-End
 
-```bash
-git clone https://github.com/your-username/dish-diary.git
-cd dish-diary
-```
+- **React** ^19.1.0
+- **Vite** ^6.3.5
+- **React Router** ^7.6.0
+- **Tailwind CSS** ^4.1.7
+- **DaisyUI** ^5.0.35
+- **Preline** ^3.0.1
+
+### 📦 Additional Libraries
+
+- **Firebase** ^11.9.0
+- **Axios** ^1.9.0
+- **Framer Motion**, **GSAP**, **React Simple Typewriter**
+- **React Slick**, **React Multi Carousel**, **Slick Carousel**
+- **React Icons**, **React CountUp**, **React Tooltip**
+- **React Hot Toast**, **SweetAlert2**
+
+### 🧪 Development Tools
+
+- **ESLint** ^9.25.0
+- **@vitejs/plugin-react**
+- **React Hooks Linting Plugins**
+- **Type Definitions** for React & DOM
+
+---
+
+## 📁 Project Structure

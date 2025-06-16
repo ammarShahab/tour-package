@@ -1,10 +1,9 @@
-import React, { useState } from "react";
-import { FaHeart } from "react-icons/fa";
+import React from "react";
 import { Link, useLoaderData } from "react-router";
 
 const PackageDetails = () => {
   const tourPackage = useLoaderData();
-  // console.log(recipe);
+
   const {
     _id,
     destination,

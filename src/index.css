@@ -2,6 +2,7 @@
 
 @import "tailwindcss";
 @plugin "daisyui";
+
 /* toggle dark light */
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -11,7 +12,6 @@
 }
 
 nav a.active {
-  /* text-decoration: underline; */
   background-color: #52a8aba4;
   box-shadow: inset;
 }

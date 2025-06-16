@@ -22,10 +22,7 @@ const MyPackagesTable = ({ myPackage, handleDelete, setMyPackages }) => {
       <td className="py-3 px-4 flex sm:justify-center ">
         <div className="space-x-2">
           <Link to={`/update-myPackages/${myPackage._id}`}>
-            <button
-              // onClick={() => handleUpdate(myPackage._id)}
-              className=" text-white px-5 py-3 rounded text-xs sm:text-sm bg-[#fe8d02] hover:bg-yellow-500 font-semibold"
-            >
+            <button className=" text-white px-5 py-3 rounded text-xs sm:text-sm bg-[#fe8d02] hover:bg-yellow-500 font-semibold">
               Edit
             </button>
           </Link>

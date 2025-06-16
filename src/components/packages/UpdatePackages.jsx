@@ -9,27 +9,33 @@ const UpdatePackages = () => {
   const data = useLoaderData();
   console.log(data);
 
+  const [myPackages, setMyPackages] = useState(data || []);
+
   const navigate = useNavigate();
 
-  const [tourName, setTourName] = useState(data?.tour_name);
+  const [tourName, setTourName] = useState(myPackages?.tour_name);
 
-  const [image, setImage] = useState(data?.image);
+  const [image, setImage] = useState(myPackages?.image);
 
-  const [duration, setDuration] = useState(data?.duration);
+  const [duration, setDuration] = useState(myPackages?.duration);
 
-  const [departure, setDeparture] = useState(data?.departure);
+  const [departure, setDeparture] = useState(myPackages?.departure);
 
-  const [destination, setDestination] = useState(data?.destination);
+  const [destination, setDestination] = useState(myPackages?.destination);
 
-  const [price, setPrice] = useState(data?.price);
+  const [price, setPrice] = useState(myPackages?.price);
 
   /* const [departureDate, setDepartureDate] = useState(data?.departure_date); */
 
-  const [departureDate, setDepartureDate] = useState(data?.departure_date);
+  const [departureDate, setDepartureDate] = useState(
+    myPackages?.departure_date
+  );
 
-  const [packageDetails, setPackageDetails] = useState(data?.package_details);
+  const [packageDetails, setPackageDetails] = useState(
+    myPackages?.package_details
+  );
 
-  const [contactNo, setContactNo] = useState(data?.guide_contact_no);
+  const [contactNo, setContactNo] = useState(myPackages?.guide_contact_no);
 
   const handleUpdatePackage = (e) => {
     e.preventDefault();
@@ -46,7 +52,7 @@ const UpdatePackages = () => {
     };
     // console.log(updatedPackage);
     axios
-      .put(`http://localhost:3000/packages/${data?._id}`, updatedPackage)
+      .put(`http://localhost:3000/packages/${myPackages?._id}`, updatedPackage)
       .then((res) => {
         console.log("data from updated package", res);
         Swal.fire({
@@ -54,9 +60,10 @@ const UpdatePackages = () => {
           text: "You clicked the button!",
           icon: "success",
         });
-        // navigate("/allPackages");
+        navigate("/allPackages");
         /* navigate(`/manage-myPackages/${loggedInUser?.user?.email}`); */
-        window.location.reload();
+        // window.location.reload();
+        setMyPackages(myPackages);
       })
       .catch((error) => {
         console.log(error);
@@ -81,7 +88,7 @@ const UpdatePackages = () => {
               type="text"
               id="tour_name"
               name="tour_name"
-              defaultValue={data.tour_name}
+              defaultValue={myPackages?.tour_name}
               onChange={(e) => setTourName(e.target.value)}
               className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base"
               required
@@ -98,7 +105,7 @@ const UpdatePackages = () => {
               type="text"
               id="image"
               name="image"
-              defaultValue={data?.image}
+              defaultValue={myPackages?.image}
               onChange={(e) => setImage(e.target.value)}
               placeholder="https://example.com/image.jpg"
               className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base"
@@ -115,7 +122,7 @@ const UpdatePackages = () => {
               type="text"
               id="duration"
               name="duration"
-              defaultValue={data?.duration}
+              defaultValue={myPackages?.duration}
               onChange={(e) => setDuration(e.target.value)}
               className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base"
               required
@@ -132,7 +139,7 @@ const UpdatePackages = () => {
               type="text"
               id="departure_location"
               name="departure_location"
-              defaultValue={data?.departure_location}
+              defaultValue={myPackages?.departure_location}
               onChange={(e) => setDeparture(e.target.value)}
               className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base"
               required
@@ -149,7 +156,7 @@ const UpdatePackages = () => {
               type="text"
               id="destination"
               name="destination"
-              defaultValue={data?.destination}
+              defaultValue={myPackages?.destination}
               onChange={(e) => setDestination(e.target.value)}
               className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base"
               required
@@ -166,7 +173,7 @@ const UpdatePackages = () => {
               type="number"
               id="price"
               name="price"
-              defaultValue={data?.price}
+              defaultValue={myPackages?.price}
               onChange={(e) => setPrice(e.target.value)}
               min="0"
               step="0.01"
@@ -185,7 +192,7 @@ const UpdatePackages = () => {
               type="date"
               id="departure_date"
               name="departure_date"
-              defaultValue={data.departure_date}
+              defaultValue={myPackages?.departure_date}
               onChange={(e) => setDepartureDate(e.target.value)}
               className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base"
               required
@@ -201,7 +208,7 @@ const UpdatePackages = () => {
             <textarea
               id="package_details"
               name="package_details"
-              defaultValue={data?.package_details}
+              defaultValue={myPackages?.package_details}
               onChange={(e) => setPackageDetails(e.target.value)}
               className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base"
               rows="4"
@@ -221,7 +228,7 @@ const UpdatePackages = () => {
               type="number"
               id="guide_contact_no"
               name="guide_contact_no"
-              defaultValue={data?.guide_contact_no}
+              defaultValue={myPackages?.guide_contact_no}
               onChange={(e) => setContactNo(e.target.value)}
               className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base"
               placeholder="8801XXXXXXXXX"
