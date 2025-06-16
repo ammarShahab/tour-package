@@ -19,8 +19,8 @@ const Home = () => {
           featuredPackagesPromise={featuredPackagesPromise}
         ></FeaturedPackages>
       </Suspense>
-      <GalleryCarousel></GalleryCarousel>
-      <WhyChooseUs></WhyChooseUs>
+      {/* <GalleryCarousel></GalleryCarousel> */}
+      {/* <WhyChooseUs></WhyChooseUs> */}
     </>
   );
 };
