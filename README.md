@@ -13,12 +13,10 @@ Trip Nest is a full-stack travel package booking platform designed to help users
 - 🔐 Firebase Authentication (Email & Social Logins)
 - 🧭 Dynamic Route Management with React Router v7
 - 🎠 Interactive Sliders and Carousels (React Slick & Multi-Carousel)
-- 📊 Animated Counters & Stats (React CountUp)
 - 🍞 Toast Notifications (React Hot Toast)
 - 🍭 Sweet Alerts for Confirmation Prompts
-- 📜 Typewriter Effects for Catchy Headlines
 - 🛠️ Responsive and Styled using Tailwind CSS & DaisyUI
-- ✨ Smooth Animations with Framer Motion and GSAP
+- ✨ Smooth Animations with Framer Motion
 
 ---
 
@@ -48,7 +46,3 @@ Trip Nest is a full-stack travel package booking platform designed to help users
 - **@vitejs/plugin-react**
 - **React Hooks Linting Plugins**
 - **Type Definitions** for React & DOM
-
----
-
-## 📁 Project Structure
