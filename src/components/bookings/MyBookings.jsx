@@ -4,7 +4,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 const MyBookings = () => {
-  const { user } = use(AuthContext);
+  const { user, theme } = use(AuthContext);
 
   const [bookings, setBookings] = useState([]);
 
@@ -50,7 +50,11 @@ const MyBookings = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
+    <div
+      className={`mx-auto p-4 min-h-screen bg-gray-100  ${
+        theme ? "dark" : ""
+      } dark:bg-zinc-400`}
+    >
       <h1 className="text-2xl font-bold mb-4 text-center">
         My Booking Information
       </h1>

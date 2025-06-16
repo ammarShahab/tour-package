@@ -26,15 +26,15 @@ const PackageCard = ({ tourPackage, search }) => {
         </p>
       </div>
       <div className="text-left mt-3 space-y-2">
-        <h4>
-          <span className="font-semibold"> Duration:</span>{" "}
+        <h4 className="dark:text-white">
+          <span className="font-semibold "> Duration: </span>
           {tourPackage.duration}
         </h4>
-        <h4>
-          <span className="font-semibold"> Departure Date:</span>
+        <h4 className="dark:text-white">
+          <span className="font-semibold"> Departure Date: </span>
           {tourPackage.departure_date}
         </h4>
-        <h4>
+        <h4 className="dark:text-white">
           <span className="font-semibold"> Price:</span>
           <span className="pl-2">{tourPackage.price} Tk/Person</span>
         </h4>

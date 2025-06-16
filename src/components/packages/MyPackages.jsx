@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { use, useState } from "react";
 import { useLoaderData } from "react-router";
 import Swal from "sweetalert2";
 import MyPackagesTable from "./MyPackagesTable";
+import AuthContext from "../context/AuthContext";
 
 const MyPackages = () => {
   const data = useLoaderData();
+  const { theme } = use(AuthContext);
   console.log(data);
   const [myPackages, setMyPackages] = useState(data || []);
   console.log(myPackages);
@@ -47,14 +49,22 @@ const MyPackages = () => {
   };
 
   return (
-    <div className="min-h-4/6 bg-gray-100 flex items-center justify-center p-4">
+    <div
+      className={`min-h-screen container bg-gray-100 p-4  ${
+        theme ? "dark" : ""
+      } dark:bg-zinc-400`}
+    >
       <div className="w-full max-w-4xl mx-auto">
         <h1 className="text-2xl font-bold text-center mb-6 text-gray-800">
           Manage My Packages
         </h1>
 
         {myPackages.length < 1 ? (
-          <h3 className="text-center font-semibold">No Packages Found</h3>
+          <div className="max-h-screen flex justify-center w-full mt-20">
+            <h3 className="text-center font-semibold text-2xl">
+              No Packages Found
+            </h3>
+          </div>
         ) : (
           <div className="overflow-x-auto bg-white shadow-md rounded-lg">
             <table className="min-w-full text-sm text-gray-600">
