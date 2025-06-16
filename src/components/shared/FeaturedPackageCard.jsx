@@ -10,9 +10,8 @@ const FeaturedPackageCard = ({ tourPackage }) => {
     <motion.div
       className={`bg-white rounded-lg shadow-md overflow-hidden text-center p-4 ${
         theme ? "dark" : ""
-      }  dark:bg-zinc-400`}
+      }  dark:bg-zinc-400 text-gray-600 dark:text-white`}
       whileHover={{ scale: 1.1 }}
-      // whileTap={{ scale: 0.5 }}
     >
       <img
         src={tourPackage.image}

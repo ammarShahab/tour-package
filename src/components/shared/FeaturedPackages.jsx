@@ -26,16 +26,6 @@ const FeaturedPackages = ({ featuredPackagesPromise }) => {
     >
       <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-bitter text-center text-[#DCC6E0] dark:text-white">
         <TextAnimation></TextAnimation>
-        {/* Our
-        <Typewriter
-          words={[" Featured Packages"]}
-          loop={true}
-          cursor
-          cursorStyle="_"
-          typeSpeed={70}
-          deleteSpeed={50}
-          delaySpeed={1000}
-        ></Typewriter> */}
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
         {featuredPackages.map((tourPackage) => (

@@ -1,10 +1,14 @@
-import React from "react";
+import React, { use } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { motion } from "motion/react";
+import AuthContext from "../context/AuthContext";
+import TextAnimationGallery from "../animation/TextAnimationGallery";
 
 const GalleryCarousel = () => {
+  const { theme } = use(AuthContext);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -64,17 +68,19 @@ const GalleryCarousel = () => {
     "https://i.ibb.co/PvkS3T4d/pexels-the-ahnafpiash-11241512-1.jpg",
   ];
   return (
-    <section className="py-6 sm:py-8 md:py-10 lg:py-12 bg-[#007073] mb-36 font-bitter">
+    <section
+      className={`py-6 sm:py-8 md:py-10 lg:py-12 bg-[#007073] mb-36 font-bitter ${
+        theme ? "dark" : ""
+      }  dark:bg-zinc-600 dark:text-white`}
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.h2
-          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-4 sm:mb-6 text-white"
-          animate={{
-            color: ["#B2F1F0", "#3ED6B5", "#00B2A9", "#006769", "#114232"],
-            transition: { duration: 5, repeat: Infinity },
-          }}
-        >
-          Moments in Motion
-        </motion.h2>
+        {theme == "dark" ? (
+          <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-4 sm:mb-6 text-white">
+            Moments in Motion
+          </h3>
+        ) : (
+          <TextAnimationGallery></TextAnimationGallery>
+        )}
 
         <p className="text-base sm:text-lg md:text-xl text-center mb-6 sm:mb-8 max-w-3xl mx-auto text-white">
           Dive into a carousel of cherished memories. Each frame captures a
