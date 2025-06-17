@@ -13,7 +13,7 @@ const ApplyBooking = () => {
   const { id } = useParams();
   // console.log(id);
 
-  const { user } = use(AuthContext);
+  const { user, theme } = use(AuthContext);
   // console.log(user);
 
   const timeStamp = Date.now();
@@ -70,19 +70,23 @@ const ApplyBooking = () => {
       });
   };
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center py-6 px-4 sm:px-6 lg:px-8">
+    <div
+      className={`min-h-screen bg-gray-100 flex items-center justify-center py-6 px-4 sm:px-6 lg:px-8  ${
+        theme ? "dark" : ""
+      } dark:bg-zinc-300`}
+    >
       <form
         onSubmit={handleBooking}
-        className="w-full max-w-3xl bg-white p-6 rounded-lg shadow-md"
+        className="w-full max-w-3xl bg-white p-6 rounded-lg shadow-md dark:bg-zinc-400 "
       >
-        <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+        <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center dark:text-white">
           Tour Booking Form
         </h2>
-        <div className="space-y-4">
+        <div className="space-y-4 ">
           <div>
             <label
               htmlFor="tourName"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-sm font-medium text-gray-700 dark:text-white"
             >
               Tour Package Name
             </label>
@@ -92,13 +96,13 @@ const ApplyBooking = () => {
               name="tour_name"
               value={data.tour_name}
               readOnly
-              className="mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md text-gray-700 focus:outline-none"
+              className="mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md text-gray-700 focus:outline-none "
             />
           </div>
           <div>
             <label
               htmlFor="price"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-sm font-medium text-gray-700 dark:text-white"
             >
               Price
             </label>
@@ -114,7 +118,7 @@ const ApplyBooking = () => {
           <div>
             <label
               htmlFor="buyerName"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-sm font-medium text-gray-700 dark:text-white"
             >
               Buyer Name
             </label>
@@ -124,13 +128,13 @@ const ApplyBooking = () => {
               name="guide_name"
               value={user.displayName}
               readOnly
-              className="mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md text-gray-700 focus:outline-none"
+              className="mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md text-gray-700 focus:outline-none "
             />
           </div>
           <div>
             <label
               htmlFor="buyerEmail"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-sm font-medium text-gray-700 dark:text-white"
             >
               Buyer Email
             </label>
@@ -146,7 +150,7 @@ const ApplyBooking = () => {
           <div>
             <label
               htmlFor="bookingDate"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-sm font-medium text-gray-700 dark:text-white"
             >
               Booking Date
             </label>
@@ -162,7 +166,7 @@ const ApplyBooking = () => {
           <div>
             <label
               htmlFor="specialNote"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-sm font-medium text-gray-700 dark:text-white"
             >
               Special Note (Optional)
             </label>
@@ -172,7 +176,7 @@ const ApplyBooking = () => {
               value={specialNote}
               onChange={(e) => setSpecialNote(e.target.value)}
               placeholder="Enter any special requests..."
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500 resize-y min-h-[100px]"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500 resize-y min-h-[100px] dark:text-white"
             />
           </div>
           <button

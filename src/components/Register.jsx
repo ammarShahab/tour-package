@@ -4,7 +4,8 @@ import AuthContext from "./context/AuthContext";
 import toast from "react-hot-toast";
 
 const Register = () => {
-  const { createUser, setUser, updateUser, setIsLoading } = use(AuthContext);
+  const { createUser, setUser, updateUser, setIsLoading, theme } =
+    use(AuthContext);
   const [errorMessage, setErrorMessage] = useState("");
 
   const navigate = useNavigate();
@@ -65,7 +66,11 @@ const Register = () => {
       });
   };
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#f4e7e1af] py-10">
+    <div
+      className={`min-h-screen flex items-center justify-center bg-[#f4e7e1af] py-10  ${
+        theme ? "dark" : ""
+      } dark:bg-zinc-400`}
+    >
       <div className="w-full max-w-md p-8 space-y-6 bg-[#F2EDEA] rounded-2xl shadow-lg mt-10">
         <h2 className="text-3xl font-bold text-center text-gray-800">
           Register Your Account

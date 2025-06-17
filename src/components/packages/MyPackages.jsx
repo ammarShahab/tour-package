@@ -59,7 +59,7 @@ const MyPackages = () => {
       } dark:bg-zinc-400`}
     >
       <div className="w-full max-w-4xl mx-auto">
-        <h1 className="text-2xl font-bold text-center mb-6 text-gray-800">
+        <h1 className="text-2xl font-bold text-center mb-6 text-gray-800 dark:text-white">
           Manage My Packages
         </h1>
 
