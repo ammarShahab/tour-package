@@ -6,8 +6,9 @@ import AuthContext from "../context/AuthContext";
 
 const MyPackages = () => {
   const data = useLoaderData();
-  const { theme } = use(AuthContext);
+  const { theme, setIsLoading } = use(AuthContext);
   // console.log(data);
+  setIsLoading(false);
   const [myPackages, setMyPackages] = useState(data || []);
   // console.log(myPackages);
 
@@ -54,11 +55,11 @@ const MyPackages = () => {
 
   return (
     <div
-      className={`min-h-screen container bg-gray-100 p-4  ${
+      className={`min-h-screen bg-gray-300 ${
         theme ? "dark" : ""
       } dark:bg-zinc-400`}
     >
-      <div className="w-full max-w-4xl mx-auto">
+      <div className="w-full p-4 max-w-4xl mx-auto">
         <h1 className="text-2xl font-bold text-center mb-6 text-gray-800 dark:text-white">
           Manage My Packages
         </h1>
