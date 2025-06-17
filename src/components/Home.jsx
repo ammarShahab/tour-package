@@ -7,6 +7,7 @@ import WhyChooseUs from "./shared/WhyChooseUs";
 
 const featuredPackagesPromise = fetch(
   "http://localhost:3000/featured-packages"
+  // "http://localhost:3000/featured-packages"
 ).then((res) => res.json());
 
 const Home = () => {

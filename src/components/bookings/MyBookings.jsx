@@ -9,6 +9,7 @@ const MyBookings = () => {
   const [bookings, setBookings] = useState([]);
 
   useEffect(() => {
+    // axios(`http://localhost:3000/my-bookings/${user?.email}`)
     axios(`http://localhost:3000/my-bookings/${user?.email}`)
       .then((data) => {
         // console.log(data?.data);
@@ -24,6 +25,7 @@ const MyBookings = () => {
     // console.log(bookingId);
 
     axios
+      // .patch(`http://localhost:3000/bookings/${bookingId}`, {
       .patch(`http://localhost:3000/bookings/${bookingId}`, {
         status: "completed",
       })

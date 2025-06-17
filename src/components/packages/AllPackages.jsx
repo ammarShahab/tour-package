@@ -14,6 +14,7 @@ const AllPackages = () => {
   // console.log(search);
 
   useEffect(() => {
+    // fetch(`http://localhost:3000/packages?searchParams=${search}`)
     fetch(`http://localhost:3000/packages?searchParams=${search}`)
       .then((res) => res.json())
       .then((data) => {

@@ -24,6 +24,7 @@ const MyPackages = () => {
     }).then((result) => {
       // console.log(result.isConfirmed);
       if (result.isConfirmed) {
+        // fetch(`http://localhost:3000/packages/${id}`, {
         fetch(`http://localhost:3000/packages/${id}`, {
           method: "DELETE",
         })

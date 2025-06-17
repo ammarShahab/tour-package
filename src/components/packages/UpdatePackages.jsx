@@ -52,6 +52,7 @@ const UpdatePackages = () => {
     };
     // console.log(updatedPackage);
     axios
+      // .put(`http://localhost:3000/packages/${myPackages?._id}`, updatedPackage)
       .put(`http://localhost:3000/packages/${myPackages?._id}`, updatedPackage)
       .then((res) => {
         // console.log("data from updated package", res);

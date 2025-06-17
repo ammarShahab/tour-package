@@ -25,6 +25,7 @@ const AddPackage = () => {
 
     // console.log(newAddedPackage);
 
+    // fetch("http://localhost:3000/packages", {
     fetch("http://localhost:3000/packages", {
       method: "POST",
       headers: {

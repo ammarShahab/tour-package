@@ -35,6 +35,7 @@ const router = createBrowserRouter([
         path: "/packages/:id",
         loader: ({ params }) =>
           fetch(`http://localhost:3000/packages/${params.id}`),
+        // fetch(`http://localhost:3000/packages/${params.id}`),
         element: (
           <PrivateRouter>
             <PackageDetails></PackageDetails>
@@ -46,6 +47,7 @@ const router = createBrowserRouter([
         path: "/manage-myPackages/:email",
         loader: ({ params }) =>
           fetch(`http://localhost:3000/manage-myPackages/${params.email}`),
+        // fetch(`http://localhost:3000/manage-myPackages/${params.email}`),
         element: (
           <PrivateRouter>
             <MyPackages></MyPackages>
@@ -56,6 +58,7 @@ const router = createBrowserRouter([
       {
         path: "/update-myPackages/:id",
         loader: ({ params }) =>
+          // fetch(`http://localhost:3000/packages/${params.id}`),
           fetch(`http://localhost:3000/packages/${params.id}`),
         element: (
           <PrivateRouter>
@@ -68,6 +71,7 @@ const router = createBrowserRouter([
         path: "/apply-booking/:id",
         loader: ({ params }) =>
           fetch(`http://localhost:3000/packages/${params.id}`),
+        // fetch(`http://localhost:3000/packages/${params.id}`),
         element: (
           <PrivateRouter>
             <ApplyBooking></ApplyBooking>

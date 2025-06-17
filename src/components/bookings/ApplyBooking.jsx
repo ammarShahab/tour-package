@@ -45,6 +45,7 @@ const ApplyBooking = () => {
     // console.log("Booking", bookings);
 
     axios
+      // .post(`http://localhost:3000/bookings/${id}`, bookings)
       .post(`http://localhost:3000/bookings/${id}`, bookings)
       .then((res) => {
         // console.log(res.data);
