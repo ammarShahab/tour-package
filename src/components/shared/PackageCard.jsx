@@ -2,7 +2,7 @@ import React, { use } from "react";
 import AuthContext from "../context/AuthContext";
 import { Link } from "react-router";
 
-const PackageCard = ({ tourPackage, search }) => {
+const PackageCard = ({ tourPackage }) => {
   const { setIsLoading, theme } = use(AuthContext);
   return (
     <div
@@ -40,7 +40,10 @@ const PackageCard = ({ tourPackage, search }) => {
         </h4>
       </div>
       <Link to={`/packages/${tourPackage?._id}`}>
-        <button className="mt-3 bg-[#fe8d02] hover:bg-yellow-500 text-white px-4 py-2 rounded-md transition">
+        <button
+          onClick={setIsLoading(false)}
+          className="mt-3 bg-[#fe8d02] hover:bg-yellow-500 text-white px-4 py-2 rounded-md transition"
+        >
           View Details
         </button>
       </Link>

@@ -4,7 +4,8 @@ import AuthContext from "./context/AuthContext";
 
 const PackageDetails = () => {
   const tourPackage = useLoaderData();
-  const { theme } = use(AuthContext);
+  const { theme, setIsLoading } = use(AuthContext);
+  setIsLoading(false);
 
   const {
     _id,
