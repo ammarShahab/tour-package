@@ -62,13 +62,13 @@ const MyBookings = () => {
         theme ? "dark" : ""
       } dark:bg-zinc-400`}
     >
-      <h1 className="text-2xl font-bold mb-4 text-center">
+      <h1 className="text-2xl font-bold mb-4 text-center dark:text-white">
         My Booking Information
       </h1>
       <div className="overflow-x-auto">
         {bookings.length < 1 ? (
           <div className="max-h-screen flex justify-center w-full mt-20">
-            <h3 className="text-center font-semibold text-2xl">
+            <h3 className="text-center font-semibold text-2xl dark:text-white">
               No Bookings Found
             </h3>
           </div>

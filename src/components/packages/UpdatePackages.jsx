@@ -5,7 +5,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 const UpdatePackages = () => {
-  const loggedInUser = use(AuthContext);
+  const { user, theme } = use(AuthContext);
   const data = useLoaderData();
   // console.log(data);
 
@@ -75,16 +75,20 @@ const UpdatePackages = () => {
   };
 
   return (
-    <div className="w-full min-h-screen bg-gray-100 flex items-center justify-center p-4 sm:p-6">
-      <div className="w-full max-w-lg sm:max-w-3xl bg-white p-4 sm:p-6 rounded-lg shadow-lg">
-        <h2 className="text-xl sm:text-2xl font-bold text-center text-gray-800 mb-4 sm:mb-6">
+    <div
+      className={`w-full min-h-screen bg-gray-100 flex items-center justify-center p-4 sm:p-6 ${
+        theme ? "dark" : ""
+      } dark:bg-zinc-300`}
+    >
+      <div className="w-full max-w-lg sm:max-w-3xl bg-white p-4 sm:p-6 rounded-lg shadow-lg dark:bg-zinc-400">
+        <h2 className="text-xl sm:text-2xl font-bold text-center text-gray-800 mb-4 sm:mb-6 dark:text-white">
           Update Tour Package
         </h2>
         <form onSubmit={handleUpdatePackage} className="space-y-3 sm:space-y-4">
           <div className="mb-4">
             <label
               htmlFor="tour_name"
-              className="block text-sm font-medium text-gray-700 mb-1 sm:text-base"
+              className="block text-sm font-medium text-gray-700 mb-1 sm:text-base dark:text-white"
             >
               Tour Name
             </label>
@@ -94,14 +98,14 @@ const UpdatePackages = () => {
               name="tour_name"
               defaultValue={myPackages?.tour_name}
               onChange={(e) => setTourName(e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base"
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base dark:text-white"
               required
             />
           </div>
           <div className="mb-4">
             <label
               htmlFor="image"
-              className="block text-sm font-medium text-gray-700 mb-1 sm:text-base"
+              className="block text-sm font-medium text-gray-700 mb-1 sm:text-base dark:text-white"
             >
               Image URL
             </label>
@@ -112,13 +116,13 @@ const UpdatePackages = () => {
               defaultValue={myPackages?.image}
               onChange={(e) => setImage(e.target.value)}
               placeholder="https://example.com/image.jpg"
-              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base"
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base dark:text-white"
             />
           </div>
           <div className="mb-4">
             <label
               htmlFor="duration"
-              className="block text-sm font-medium text-gray-700 mb-1 sm:text-base"
+              className="block text-sm font-medium text-gray-700 mb-1 sm:text-base dark:text-white"
             >
               Duration (e.g. 3 Days 2 Nights)
             </label>
@@ -128,14 +132,14 @@ const UpdatePackages = () => {
               name="duration"
               defaultValue={myPackages?.duration}
               onChange={(e) => setDuration(e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base"
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base dark:text-white"
               required
             />
           </div>
           <div className="mb-4">
             <label
               htmlFor="departure_location"
-              className="block text-sm font-medium text-gray-700 mb-1 sm:text-base"
+              className="block text-sm font-medium text-gray-700 mb-1 sm:text-base dark:text-white"
             >
               Departure Location
             </label>
@@ -145,14 +149,14 @@ const UpdatePackages = () => {
               name="departure_location"
               defaultValue={myPackages?.departure_location}
               onChange={(e) => setDeparture(e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base"
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base dark:text-white"
               required
             />
           </div>
           <div className="mb-4">
             <label
               htmlFor="destination"
-              className="block text-sm font-medium text-gray-700 mb-1 sm:text-base"
+              className="block text-sm font-medium text-gray-700 mb-1 sm:text-base dark:text-white"
             >
               Destination
             </label>
@@ -162,14 +166,14 @@ const UpdatePackages = () => {
               name="destination"
               defaultValue={myPackages?.destination}
               onChange={(e) => setDestination(e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base"
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base dark:text-white"
               required
             />
           </div>
           <div className="mb-4">
             <label
               htmlFor="price"
-              className="block text-sm font-medium text-gray-700 mb-1 sm:text-base"
+              className="block text-sm font-medium text-gray-700 mb-1 sm:text-base dark:text-white"
             >
               Price
             </label>
@@ -181,14 +185,14 @@ const UpdatePackages = () => {
               onChange={(e) => setPrice(e.target.value)}
               min="0"
               step="0.01"
-              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base"
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base dark:text-white"
               required
             />
           </div>
           <div className="mb-4">
             <label
               htmlFor="departure_date"
-              className="block text-sm font-мedium text-gray-700 mb-1 sm:text-base"
+              className="block text-sm font-мedium text-gray-700 mb-1 sm:text-base dark:text-white"
             >
               Departure Date
             </label>
@@ -198,14 +202,14 @@ const UpdatePackages = () => {
               name="departure_date"
               defaultValue={myPackages?.departure_date}
               onChange={(e) => setDepartureDate(e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base"
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base dark:text-white"
               required
             />
           </div>
           <div className="mb-4">
             <label
               htmlFor="package_details"
-              className="block text-sm font-medium text-gray-700 mb-1 sm:text-base"
+              className="block text-sm font-medium text-gray-700 mb-1 sm:text-base dark:text-white"
             >
               Package Details
             </label>
@@ -214,7 +218,7 @@ const UpdatePackages = () => {
               name="package_details"
               defaultValue={myPackages?.package_details}
               onChange={(e) => setPackageDetails(e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base"
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base dark:text-white"
               rows="4"
               required
             />
@@ -224,7 +228,7 @@ const UpdatePackages = () => {
           <div className="mb-4">
             <label
               htmlFor="guide_contact_no"
-              className="block text-sm font-medium text-gray-700 mb-1 sm:text-base"
+              className="block text-sm font-medium text-gray-700 mb-1 sm:text-base dark:text-white"
             >
               Contact No.
             </label>
@@ -234,7 +238,7 @@ const UpdatePackages = () => {
               name="guide_contact_no"
               defaultValue={myPackages?.guide_contact_no}
               onChange={(e) => setContactNo(e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base"
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base dark:text-white"
               placeholder="8801XXXXXXXXX"
               required
             />
@@ -242,7 +246,7 @@ const UpdatePackages = () => {
           <div className="mb-4">
             <label
               htmlFor="guide_name"
-              className="block text-sm font-medium text-gray-700 mb-1 sm:text-base"
+              className="block text-sm font-medium text-gray-700 mb-1 sm:text-base dark:text-white"
             >
               Guide Name
             </label>
@@ -250,9 +254,9 @@ const UpdatePackages = () => {
               type="text"
               id="guide_name"
               name="guide_name"
-              defaultValue={loggedInUser?.user?.displayName}
+              defaultValue={user?.displayName}
               // onChange={handleChange}
-              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base"
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base dark:text-white"
               readOnly
               required
             />
@@ -260,7 +264,7 @@ const UpdatePackages = () => {
           <div className="mb-4">
             <label
               htmlFor="guide_photo"
-              className="block text-sm font-medium text-gray-700 mb-1 sm:text-base"
+              className="block text-sm font-medium text-gray-700 mb-1 sm:text-base dark:text-white"
             >
               Guide Photo URL
             </label>
@@ -268,17 +272,17 @@ const UpdatePackages = () => {
               type="text"
               id="guide_photo"
               name="guide_photo"
-              defaultValue={loggedInUser?.user?.photoURL}
+              defaultValue={user?.photoURL}
               // onChange={handleChange}
               placeholder="https://example.com/guide.jpg"
-              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base"
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base dark:text-white"
               readOnly
             />
           </div>
           <div className="mb-4">
             <label
               htmlFor="guide_email"
-              className="block text-sm font-medium text-gray-700 mb-1 sm:text-base"
+              className="block text-sm font-medium text-gray-700 mb-1 sm:text-base dark:text-white"
             >
               Guide Email
             </label>
@@ -286,16 +290,16 @@ const UpdatePackages = () => {
               type="text"
               id="guide_email"
               name="guide_email"
-              defaultValue={loggedInUser?.user?.email}
+              defaultValue={user?.email}
               // onChange={handleChange}
-              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base"
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#fe8d02] text-sm sm:text-base dark:text-white"
               readOnly
               required
             />
           </div>
           <button
             type="submit"
-            className="w-full py-2 bg-[#fe8d02] text-white rounded-md hover:bg-[#fe5602] transition-colors text-base sm:text-lg font-medium"
+            className="w-full py-2 bg-[#fe8d02] text-white rounded-md hover:bg-[#fe5602] transition-colors text-base sm:text-lg font-medium dark:text-white"
           >
             Update Package
           </button>
