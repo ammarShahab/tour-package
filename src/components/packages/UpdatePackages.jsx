@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 const UpdatePackages = () => {
   const loggedInUser = use(AuthContext);
   const data = useLoaderData();
-  console.log(data);
+  // console.log(data);
 
   const [myPackages, setMyPackages] = useState(data || []);
 
@@ -54,7 +54,7 @@ const UpdatePackages = () => {
     axios
       .put(`http://localhost:3000/packages/${myPackages?._id}`, updatedPackage)
       .then((res) => {
-        console.log("data from updated package", res);
+        // console.log("data from updated package", res);
         Swal.fire({
           title: "Package Updated Successfully!",
           text: "You clicked the button!",

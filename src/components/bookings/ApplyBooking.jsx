@@ -6,15 +6,15 @@ import Swal from "sweetalert2";
 
 const ApplyBooking = () => {
   const data = useLoaderData();
-  console.log(data);
+  // console.log(data);
 
   const navigate = useNavigate();
 
   const { id } = useParams();
-  console.log(id);
+  // console.log(id);
 
   const { user } = use(AuthContext);
-  console.log(user);
+  // console.log(user);
 
   const timeStamp = Date.now();
   const currentDate = new Date(timeStamp);
@@ -42,14 +42,14 @@ const ApplyBooking = () => {
       specialNote: special_note,
       status: "pending",
     };
-    console.log("Booking", bookings);
+    // console.log("Booking", bookings);
 
     axios
       .post(`http://localhost:3000/bookings/${id}`, bookings)
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         setPackages((prev) => {
-          console.log(prev);
+          // console.log(prev);
           return { ...prev, bookingCount: prev.bookingCount + 1 };
         });
         if (res.data.insertedId) {

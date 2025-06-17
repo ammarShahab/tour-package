@@ -7,9 +7,9 @@ import AuthContext from "../context/AuthContext";
 const MyPackages = () => {
   const data = useLoaderData();
   const { theme } = use(AuthContext);
-  console.log(data);
+  // console.log(data);
   const [myPackages, setMyPackages] = useState(data || []);
-  console.log(myPackages);
+  // console.log(myPackages);
 
   const handleDelete = (id) => {
     // console.log(id);

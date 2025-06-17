@@ -11,24 +11,24 @@ const MyBookings = () => {
   useEffect(() => {
     axios(`http://localhost:3000/my-bookings/${user?.email}`)
       .then((data) => {
-        console.log(data?.data);
+        // console.log(data?.data);
         setBookings(data?.data);
       })
       .catch((err) => {
         console.log(err);
       });
   }, [user]);
-  console.log(bookings);
+  // console.log(bookings);
 
   const handleConfirmBooking = (bookingId) => {
-    console.log(bookingId);
+    // console.log(bookingId);
 
     axios
       .patch(`http://localhost:3000/bookings/${bookingId}`, {
         status: "completed",
       })
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         if (res.data.modifiedCount) {
           Swal.fire({
             title: "Your Booking has been Confirmed.",

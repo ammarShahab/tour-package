@@ -11,19 +11,19 @@ const AllPackages = () => {
   const [tourPackages, setTourPackages] = useState([]);
   const [search, setSearch] = useState("");
 
-  console.log(search);
+  // console.log(search);
 
   useEffect(() => {
     fetch(`http://localhost:3000/packages?searchParams=${search}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setTourPackages(data);
       });
   }, [search]);
 
   // const tourPackages = use(allPackagesPromise);
-  console.log(tourPackages, isLoading);
+  // console.log(tourPackages, isLoading);
 
   return (
     <div className="mt-20 mb-40">

@@ -11,7 +11,7 @@ const FeaturedPackages = ({ featuredPackagesPromise }) => {
   // const [topfeaturedPackages, setTopfeaturedPackages] = useState([]);
   // console.log(theme);
   const featuredPackages = use(featuredPackagesPromise);
-  console.log(featuredPackages);
+  // console.log(featuredPackages);
 
   const handleViewDetails = (id) => {
     setIsLoading(false);

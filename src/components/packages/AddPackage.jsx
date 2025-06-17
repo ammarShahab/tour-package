@@ -4,15 +4,15 @@ import AuthContext from "../context/AuthContext";
 
 const AddPackage = () => {
   const { user, theme } = use(AuthContext);
-  console.log(user);
-  console.log(user?.email);
+  // console.log(user);
+  // console.log(user?.email);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
-    console.log(data);
+    // console.log(data);
 
     const { guide_contact_no, price, ...newAddedPackage } = data;
 
@@ -23,7 +23,7 @@ const AddPackage = () => {
     const today = new Date(currentDate);
     newAddedPackage.created_at = today.toLocaleDateString();
 
-    console.log(newAddedPackage);
+    // console.log(newAddedPackage);
 
     fetch("http://localhost:3000/packages", {
       method: "POST",
@@ -34,7 +34,7 @@ const AddPackage = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log("packages added to the dB succesfully", data);
+        // console.log("packages added to the dB succesfully", data);
         if (data.insertedId) {
           Swal.fire({
             title: "Your Package Added Successfully",
