@@ -4,6 +4,7 @@ import { Link } from "react-router";
 
 const PackageCard = ({ tourPackage }) => {
   const { setIsLoading, theme } = use(AuthContext);
+
   return (
     <div
       className={`bg-white rounded-lg shadow-md overflow-hidden text-center p-4 ${

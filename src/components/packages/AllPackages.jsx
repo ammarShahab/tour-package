@@ -1,13 +1,14 @@
 import React, { Suspense, use, useEffect, useState } from "react";
 import AuthContext from "../context/AuthContext";
 import PackageCard from "../shared/PackageCard";
+import Loading from "../Loading";
 
 /* const allPackagesPromise = fetch("http://localhost:3000/packages").then((res) =>
   res.json()
 ); */
 
 const AllPackages = () => {
-  const { isLoading } = use(AuthContext);
+  const { isLoading, setIsLoading } = use(AuthContext);
   const [tourPackages, setTourPackages] = useState([]);
   const [search, setSearch] = useState("");
 
@@ -21,9 +22,12 @@ const AllPackages = () => {
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
+        // setIsLoading(true);
+
         setTourPackages(data);
+        // setIsLoading(false);
       });
-  }, [search]);
+  }, [search, setIsLoading]);
 
   // const tourPackages = use(allPackagesPromise);
   // console.log(tourPackages, isLoading);
@@ -49,11 +53,10 @@ const AllPackages = () => {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
         {tourPackages.map((tourPackage) => (
-          <Suspense key={tourPackage._id} fallback={isLoading}>
+          <Suspense fallback={<Loading></Loading>}>
             <PackageCard
               key={tourPackage._id}
               tourPackage={tourPackage}
-              search={search}
             ></PackageCard>
           </Suspense>
         ))}
