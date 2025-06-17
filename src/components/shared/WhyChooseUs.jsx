@@ -50,7 +50,7 @@ const WhyChooseUs = () => {
           <div className="px-2">
             <div className="flex flex-col items-center p-6 rounded-lg shadow-md bg-[#E6F0FA] dark:bg-zinc-400">
               <svg
-                className="w-12 h-12 text-blue-800 mb-4"
+                className="w-12 h-12 text-blue-800 dark:text-white mb-4"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -77,7 +77,7 @@ const WhyChooseUs = () => {
           <div className="px-2">
             <div className="flex flex-col items-center p-6 rounded-lg shadow-md bg-[#FFF4E6] dark:bg-zinc-400">
               <svg
-                className="w-12 h-12 text-orange-600 mb-4"
+                className="w-12 h-12 text-orange-600 dark:text-white mb-4"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -104,7 +104,7 @@ const WhyChooseUs = () => {
           <div className="px-2">
             <div className="flex flex-col items-center p-6 rounded-lg shadow-md bg-[#E6FFF5] dark:bg-zinc-400">
               <svg
-                className="w-12 h-12 text-green-600 mb-4"
+                className="w-12 h-12 text-green-600 dark:text-white mb-4"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -131,7 +131,7 @@ const WhyChooseUs = () => {
           <div className="px-2">
             <div className="flex flex-col items-center p-6 rounded-lg shadow-md bg-[#FFE6E6] dark:bg-zinc-400">
               <svg
-                className="w-12 h-12 text-red-600 mb-4"
+                className="w-12 h-12 text-red-600 dark:text-white mb-4"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -161,7 +161,7 @@ const WhyChooseUs = () => {
               // style={{ backgroundColor: "" }}
             >
               <svg
-                className="w-12 h-12 text-purple-600 mb-4"
+                className="w-12 h-12 text-purple-600 dark:text-white mb-4"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -188,7 +188,7 @@ const WhyChooseUs = () => {
           <div className="px-2">
             <div className="flex flex-col items-center p-6 rounded-lg shadow-md bg-[#FEF3E2] dark:bg-zinc-400">
               <svg
-                className="w-12 h-12 text-yellow-600 mb-4"
+                className="w-12 h-12 text-yellow-600 dark:text-white mb-4"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
