@@ -4,8 +4,7 @@ Trip Nest is a modern travel package booking platform built with the latest fron
 
 ## 🌐 Live Site
 
-🔗 [Visit Trip Nest](https://your-tripnest-client-url.com)  
-_(Replace with your actual deployed URL)_
+🔗 [Visit Trip Nest](https://a11-tripnest-client.web.app/)
 
 ---
 
@@ -31,7 +30,6 @@ The goal of Trip Nest is to provide a seamless travel booking experience where u
 - 📊 **Animated Counters** with **React CountUp**
 - 🌀 **GSAP** and **Framer Motion** for animations
 - 🎨 **Tailwind CSS** and **DaisyUI** for responsive styling
-- 🔍 **Tooltips, Typewriter effects, Icons**, and more
 
 ---
 
