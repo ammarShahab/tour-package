@@ -10,7 +10,6 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../../../public/firebase/firebase.config";
-import Swal from "sweetalert2";
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -29,19 +28,18 @@ const AuthProvider = ({ children }) => {
   };
 
   const userLogin = (email, password) => {
-    // setIsLoading(true);
+    setIsLoading(true);
 
     return signInWithEmailAndPassword(auth, email, password);
   };
 
   const logOut = () => {
     setIsLoading(true);
-
     return signOut(auth);
   };
 
   const googleSignIn = (provider) => {
-    // setLoading(true);
+    setIsLoading(true);
     return signInWithPopup(auth, provider);
   };
 

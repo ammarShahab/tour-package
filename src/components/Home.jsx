@@ -4,6 +4,7 @@ import { Suspense, use } from "react";
 import AuthContext from "./context/AuthContext";
 import GalleryCarousel from "./shared/GalleryCarousel";
 import WhyChooseUs from "./shared/WhyChooseUs";
+import Loading from "./Loading";
 
 const featuredPackagesPromise = fetch(
   "https://b11a11-server-side-ashahab007.vercel.app/featured-packages"
@@ -15,7 +16,7 @@ const Home = () => {
   return (
     <>
       <Banner></Banner>
-      <Suspense fallback={isLoading}>
+      <Suspense fallback={<Loading></Loading>}>
         <FeaturedPackages
           featuredPackagesPromise={featuredPackagesPromise}
         ></FeaturedPackages>
