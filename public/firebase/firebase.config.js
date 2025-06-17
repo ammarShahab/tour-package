@@ -14,13 +14,3 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
-
-// .env.local file
-/* 
-VITE_apiKey=AIzaSyBiyYzVVjfoX157K3Ch2juIsqAur7fr_iI
-VITE_authDomain=a11-tripnest-client.firebaseapp.com
-VITE_projectId=a11-tripnest-client
-VITE_storageBucket=a11-tripnest-client.firebasestorage.app
-VITE_messagingSenderId=777068337899
-VITE_appId=1:777068337899:web:edc7f10bb7854be838bcae
-*/
