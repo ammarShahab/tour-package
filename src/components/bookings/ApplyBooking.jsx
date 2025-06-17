@@ -46,7 +46,10 @@ const ApplyBooking = () => {
 
     axios
       // .post(`http://localhost:3000/bookings/${id}`, bookings)
-      .post(`http://localhost:3000/bookings/${id}`, bookings)
+      .post(
+        `https://b11a11-server-side-ashahab007.vercel.app/bookings/${id}`,
+        bookings
+      )
       .then((res) => {
         // console.log(res.data);
         setPackages((prev) => {

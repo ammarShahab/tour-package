@@ -10,7 +10,9 @@ const MyBookings = () => {
 
   useEffect(() => {
     // axios(`http://localhost:3000/my-bookings/${user?.email}`)
-    axios(`http://localhost:3000/my-bookings/${user?.email}`)
+    axios(
+      `https://b11a11-server-side-ashahab007.vercel.app/my-bookings/${user?.email}`
+    )
       .then((data) => {
         // console.log(data?.data);
         setBookings(data?.data);
@@ -26,9 +28,12 @@ const MyBookings = () => {
 
     axios
       // .patch(`http://localhost:3000/bookings/${bookingId}`, {
-      .patch(`http://localhost:3000/bookings/${bookingId}`, {
-        status: "completed",
-      })
+      .patch(
+        `https://b11a11-server-side-ashahab007.vercel.app/bookings/${bookingId}`,
+        {
+          status: "completed",
+        }
+      )
       .then((res) => {
         // console.log(res.data);
         if (res.data.modifiedCount) {

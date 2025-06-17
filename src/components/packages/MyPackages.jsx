@@ -25,9 +25,12 @@ const MyPackages = () => {
       // console.log(result.isConfirmed);
       if (result.isConfirmed) {
         // fetch(`http://localhost:3000/packages/${id}`, {
-        fetch(`http://localhost:3000/packages/${id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://b11a11-server-side-ashahab007.vercel.app/packages/${id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             // console.log("After delete", data);

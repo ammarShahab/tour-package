@@ -6,7 +6,7 @@ import GalleryCarousel from "./shared/GalleryCarousel";
 import WhyChooseUs from "./shared/WhyChooseUs";
 
 const featuredPackagesPromise = fetch(
-  "http://localhost:3000/featured-packages"
+  "https://b11a11-server-side-ashahab007.vercel.app/featured-packages"
   // "http://localhost:3000/featured-packages"
 ).then((res) => res.json());
 

@@ -26,7 +26,7 @@ const AddPackage = () => {
     // console.log(newAddedPackage);
 
     // fetch("http://localhost:3000/packages", {
-    fetch("http://localhost:3000/packages", {
+    fetch("https://b11a11-server-side-ashahab007.vercel.app/packages", {
       method: "POST",
       headers: {
         "content-type": "application/json",

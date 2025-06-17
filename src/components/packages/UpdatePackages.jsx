@@ -53,7 +53,10 @@ const UpdatePackages = () => {
     // console.log(updatedPackage);
     axios
       // .put(`http://localhost:3000/packages/${myPackages?._id}`, updatedPackage)
-      .put(`http://localhost:3000/packages/${myPackages?._id}`, updatedPackage)
+      .put(
+        `https://b11a11-server-side-ashahab007.vercel.app/packages/${myPackages?._id}`,
+        updatedPackage
+      )
       .then((res) => {
         // console.log("data from updated package", res);
         Swal.fire({

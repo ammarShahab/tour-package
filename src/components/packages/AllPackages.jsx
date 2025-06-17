@@ -15,7 +15,9 @@ const AllPackages = () => {
 
   useEffect(() => {
     // fetch(`http://localhost:3000/packages?searchParams=${search}`)
-    fetch(`http://localhost:3000/packages?searchParams=${search}`)
+    fetch(
+      `https://b11a11-server-side-ashahab007.vercel.app/packages?searchParams=${search}`
+    )
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
