@@ -74,10 +74,8 @@ The goal of Trip Nest is to provide a seamless travel booking experience where u
 
 | Command           | Description              |
 | ----------------- | ------------------------ |
-| `npm run dev`     | Start development server |
-| `npm run build`   | Build for production     |
-| `npm run preview` | Preview production build |
-| `npm run lint`    | Run ESLint checks        |
+| `npm run dev`     | Start development in local |
+
 
 ---
 
