@@ -1,43 +1,45 @@
-import React, { Suspense, use, useEffect, useState } from "react";
-import AuthContext from "../context/AuthContext";
+import React, { useEffect, useState } from "react";
 import PackageCard from "../shared/PackageCard";
 import Loading from "../Loading";
 
-/* const allPackagesPromise = fetch("http://localhost:3000/packages").then((res) =>
-  res.json()
-); */
+const SkeletonCard = () => (
+  <div className="animate-pulse p-4  rounded-lg shadow">
+    <div className="h-48 bg-gray-300 rounded mb-4"></div>
+    <div className="h-6 bg-gray-300 rounded mb-2 w-3/4"></div>
+    <div className="h-4 bg-gray-300 rounded mb-1 w-1/2"></div>
+    <div className="h-4 bg-gray-300 rounded w-2/3"></div>
+  </div>
+);
 
 const AllPackages = () => {
-  const { isLoading, setIsLoading } = use(AuthContext);
+  const [isLoading, setIsLoading] = useState(false);
   const [tourPackages, setTourPackages] = useState([]);
   const [search, setSearch] = useState("");
 
-  // console.log(search);
-
   useEffect(() => {
-    // fetch(`http://localhost:3000/packages?searchParams=${search}`)
+    setIsLoading(true);
     fetch(
       `https://b11a11-server-side-ashahab007.vercel.app/packages?searchParams=${search}`
     )
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data);
-        // setIsLoading(true);
-
         setTourPackages(data);
-        // setIsLoading(false);
-      });
-  }, [search, setIsLoading]);
-
-  // const tourPackages = use(allPackagesPromise);
-  // console.log(tourPackages, isLoading);
+        setIsLoading(false);
+      })
+      .catch(() => setIsLoading(false));
+  }, [search]);
 
   return (
     <div className="mt-20 mb-40">
       <h1 className="text-center text-4xl sm:text-5xl font-bold mb-10">
         All Packages
       </h1>
-      <div className="flex justify-center">
+
+      {/* Search */}
+      <form
+        onSubmit={(e) => e.preventDefault()}
+        className="flex justify-center"
+      >
         <fieldset className="fieldset">
           <legend className="fieldset-legend text-2xl">
             Search Your Package Here
@@ -47,20 +49,36 @@ const AllPackages = () => {
             name="search"
             className="input"
             placeholder="Type here"
+            value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
         </fieldset>
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
-        {tourPackages.map((tourPackage) => (
-          <Suspense fallback={<Loading></Loading>}>
-            <PackageCard
-              key={tourPackage._id}
-              tourPackage={tourPackage}
-            ></PackageCard>
-          </Suspense>
-        ))}
-      </div>
+      </form>
+
+      {/* Loading Skeletons */}
+      {isLoading ? (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+          {Array.from({ length: 6 }).map((_, index) => (
+            <SkeletonCard key={index} />
+          ))}
+        </div>
+      ) : (
+        <>
+          {/* No Results */}
+          {tourPackages.length === 0 ? (
+            <div className="text-center mt-10 text-gray-500 text-xl">
+              No results found for "
+              <span className="font-semibold">{search}</span>"
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+              {tourPackages.map((tourPackage) => (
+                <PackageCard key={tourPackage._id} tourPackage={tourPackage} />
+              ))}
+            </div>
+          )}
+        </>
+      )}
     </div>
   );
 };
