@@ -3,7 +3,7 @@ import PackageCard from "../shared/PackageCard";
 import Loading from "../Loading";
 
 const SkeletonCard = () => (
-  <div className="animate-pulse p-4  rounded-lg shadow">
+  <div className="animate-pulse p-4 rounded-lg shadow">
     <div className="h-48 bg-gray-300 rounded mb-4"></div>
     <div className="h-6 bg-gray-300 rounded mb-2 w-3/4"></div>
     <div className="h-4 bg-gray-300 rounded mb-1 w-1/2"></div>
