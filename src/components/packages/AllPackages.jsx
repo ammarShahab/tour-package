@@ -31,9 +31,16 @@ const AllPackages = () => {
 
   return (
     <div className="mt-20 mb-40">
-      <h1 className="text-center text-4xl sm:text-5xl font-bold mb-10">
-        All Packages
-      </h1>
+      <div className="mb-10">
+        <h1 className="text-center text-4xl sm:text-5xl font-bold mb-5">
+          All Packages
+        </h1>
+        <p className="text-center">
+          Adventure is just a click away — from exotic getaways to weekend
+          escapes, discover destinations that inspire and packages that fit
+          every traveler.
+        </p>
+      </div>
 
       {/* Search */}
       <form
