@@ -5,6 +5,7 @@ import AuthContext from "./context/AuthContext";
 import GalleryCarousel from "./shared/GalleryCarousel";
 import Loading from "./Loading";
 import WhyChooseUs from "./shared/WhyChooseUs";
+import Testimonials from "./shared/Testimonials";
 
 const featuredPackagesPromise = fetch(
   "https://b11a11-server-side-ashahab007.vercel.app/featured-packages"
@@ -23,6 +24,7 @@ const Home = () => {
       </Suspense>
       <GalleryCarousel></GalleryCarousel>
       <WhyChooseUs></WhyChooseUs>
+      <Testimonials></Testimonials>
     </>
   );
 };

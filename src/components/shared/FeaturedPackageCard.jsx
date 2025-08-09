@@ -4,7 +4,8 @@ import { Link } from "react-router";
 import { motion } from "motion/react";
 
 const FeaturedPackageCard = ({ tourPackage }) => {
-  const { setIsLoading, theme } = use(AuthContext);
+  const { theme } = use(AuthContext);
+  // console.log(tourPackage);
 
   return (
     <motion.div
@@ -33,9 +34,18 @@ const FeaturedPackageCard = ({ tourPackage }) => {
           <span className="font-semibold"> Duration:</span>{" "}
           {tourPackage.duration}
         </h4>
-        <h4>
+        {/* <h4>
           <span className="font-semibold"> Departure Date:</span>
           {tourPackage.departure_date}
+        </h4> */}
+        <h4>
+          <span className="font-semibold "> Description:</span>
+          <span className="pl-1">
+            {tourPackage.package_details.split(" ").length > 20
+              ? tourPackage.package_details.slice(0, 100)
+              : tourPackage.package_details}
+            ...
+          </span>
         </h4>
         <h4>
           <span className="font-semibold"> Price:</span>

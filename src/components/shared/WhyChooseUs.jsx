@@ -36,7 +36,7 @@ const WhyChooseUs = () => {
   };
   return (
     <section
-      className={`py-16 mb-32 px-8 bg-[#6090a6] ${
+      className={`py-16  px-8 bg-[#6090a6] ${
         theme ? "dark" : ""
       } dark:bg-zinc-600 dark:text-white`}
     >
