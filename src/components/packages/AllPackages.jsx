@@ -30,9 +30,9 @@ const AllPackages = () => {
   }, [search]);
 
   return (
-    <div className="mt-20 mb-40">
+    <div className="max-w-7xl mx-auto mt-16 sm:mt-20 mb-40 p-2">
       <div className="mb-10">
-        <h1 className="text-center text-4xl sm:text-5xl font-bold mb-5">
+        <h1 className="text-center text-xl sm:text-2xl font-bold mb-4">
           All Packages
         </h1>
         <p className="text-center">
@@ -45,16 +45,16 @@ const AllPackages = () => {
       {/* Search */}
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="flex justify-center"
+        className="flex justify-center sm:justify-start"
       >
         <fieldset className="fieldset">
-          <legend className="fieldset-legend text-2xl">
+          <legend className="text-sm text-gray-600">
             Search Your Package Here
           </legend>
           <input
             type="text"
             name="search"
-            className="input"
+            className="input w-full"
             placeholder="Type here"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
@@ -74,11 +74,10 @@ const AllPackages = () => {
           {/* No Results */}
           {tourPackages.length === 0 ? (
             <div className="text-center mt-10 text-gray-500 text-xl">
-              No results found for "
-              <span className="font-semibold">{search}</span>"
+              No results found"<span className="font-semibold">{search}</span>"
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 gap-4 mt-6">
               {tourPackages.map((tourPackage) => (
                 <PackageCard key={tourPackage._id} tourPackage={tourPackage} />
               ))}
