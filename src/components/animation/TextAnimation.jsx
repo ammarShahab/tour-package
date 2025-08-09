@@ -1,16 +1,22 @@
 import React from "react";
-
 import { easeInOut, motion } from "motion/react";
 
 const TextAnimation = () => {
   return (
     <motion.h1
-      initial={{ y: 25, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 3, ease: easeInOut, repeat: Infinity }}
+      className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white"
+      initial={{ y: 20, opacity: 0, scale: 0.98 }}
+      animate={{ y: 0, opacity: 1, scale: 1 }}
+      transition={{
+        duration: 1.5,
+        ease: easeInOut,
+        repeat: Infinity,
+        repeatType: "reverse",
+      }}
     >
       Our Featured Packages
     </motion.h1>
   );
 };
+
 export default TextAnimation;
