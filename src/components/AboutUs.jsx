@@ -5,11 +5,11 @@ const AboutUs = () => {
   const { theme } = use(AuthContext);
   return (
     <div
-      className={`min-h-screen bg-yellow-50 font-sans text-gray-800 leading-relaxed ${
+      className={`min-h-screen bg-gray-100 font-sans text-gray-800 leading-relaxed ${
         theme ? "dark" : ""
       } dark:bg-zinc-400 dark:text-white`}
     >
-      <div className="max-w-4xl mx-auto px-4 py-8 ">
+      <div className="max-w-7xl mx-auto px-4 py-8 mt-14">
         <section className="bg-white dark:bg-zinc-500 p-6 mb-8 rounded-lg shadow-md">
           <h2 className="text-3xl font-semibold text-gray-800 dark:text-white mb-4">
             About Trip Nest

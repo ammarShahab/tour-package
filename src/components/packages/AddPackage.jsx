@@ -49,15 +49,15 @@ const AddPackage = () => {
   };
   return (
     <div
-      className={`w-full min-h-screen bg-gray-100 flex items-center justify-center p-4 sm:p-6 ${
+      className={` min-h-screen bg-gray-100   sm:p-6 ${
         theme ? "dark" : ""
-      } dark:bg-zinc-400`}
+      } dark:bg-zinc-400 mt-16`}
     >
-      <div className="w-full max-w-lg sm:max-w-3xl bg-white dark:bg-zinc-500 p-4 sm:p-6 rounded-lg shadow-lg">
+      <div className="  max-w-7xl mx-auto  bg-white dark:bg-zinc-500 p-4 sm:p-6 rounded-lg shadow-lg">
         <h2 className="text-xl sm:text-2xl font-bold text-center text-gray-800 mb-4 sm:mb-6 dark:text-white">
           Add Tour Package
         </h2>
-        <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
+        <form onSubmit={handleSubmit} className=" space-y-3 sm:space-y-4">
           <div className="mb-4">
             <label
               htmlFor="tour_name"

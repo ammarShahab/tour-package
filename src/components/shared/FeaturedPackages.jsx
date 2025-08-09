@@ -37,7 +37,7 @@ const FeaturedPackages = ({ featuredPackagesPromise }) => {
         ))}
       </div>
       <Link to="/allPackages">
-        <button className="block mx-auto mt-6 bg-[#A27B5C] text-white px-6 py-3 rounded-md text-lg hover:bg-[#ff8d03] transition">
+        <button className="block mx-auto mt-6 bg-[#d9cab3] text-black px-6 py-3 rounded-md text-lg hover:bg-[#ff8d03] transition font-semibold">
           See All Packages
         </button>
       </Link>
