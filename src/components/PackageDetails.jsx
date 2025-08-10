@@ -25,7 +25,7 @@ const PackageDetails = () => {
 
   return (
     <div className={`${theme ? "dark" : ""} dark:bg-zinc-300 border`}>
-      <div className="w-full max-w-5xl mx-auto my-5 rounded-lg overflow-hidden shadow-lg bg-white dark:bg-zinc-400">
+      <div className="w-full max-w-7xl mx-auto my-5 rounded-lg overflow-hidden shadow-lg bg-white dark:bg-zinc-400 mt-22">
         <div className="w-full">
           <img
             src={image}

@@ -77,7 +77,7 @@ const ApplyBooking = () => {
     >
       <form
         onSubmit={handleBooking}
-        className="w-full max-w-3xl bg-white p-6 rounded-lg shadow-md dark:bg-zinc-400 "
+        className="w-full max-w-7xl bg-white p-6 rounded-lg shadow-md dark:bg-zinc-400 mt-20"
       >
         <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center dark:text-white">
           Tour Booking Form

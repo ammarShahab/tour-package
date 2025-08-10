@@ -54,10 +54,10 @@ const AllPackages = () => {
     <section className={`${theme ? "dark" : ""} dark:bg-zinc-400`}>
       <div className={`max-w-7xl mx-auto p-2 sm:pb-10  `}>
         <div className="mb-8">
-          <h1 className="text-center mt-20 text-2xl font-bold mb-2">
+          <h1 className="text-center mt-20 text-2xl font-bold mb-2 dark:text-white">
             All Packages
           </h1>
-          <p className="text-center text-sm text-gray-600">
+          <p className="text-center text-sm text-gray-600 dark:text-white">
             Adventure is just a click away — discover destinations and packages
             that fit every traveler.
           </p>
@@ -67,7 +67,7 @@ const AllPackages = () => {
         <div className="flex flex-col sm:flex-row items-stretch justify-between gap-4 mb-6">
           <form onSubmit={(e) => e.preventDefault()} className="flex-1">
             <fieldset className="fieldset">
-              <legend className="text-sm text-gray-600">
+              <legend className="text-sm text-gray-600 dark:text-gray-200">
                 Search Your Package Here
               </legend>
               <input
@@ -83,7 +83,9 @@ const AllPackages = () => {
 
           <div className="w-56">
             <fieldset className="fieldset">
-              <legend className="text-sm text-gray-600">Sort By Price</legend>
+              <legend className="text-sm text-gray-600 dark:text-gray-200">
+                Sort By Price
+              </legend>
               <select
                 className="select w-full"
                 value={sort}
