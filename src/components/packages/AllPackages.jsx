@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PackageCard from "../shared/PackageCard";
-import Loading from "../Loading";
 
+/* Simple skeleton while loading */
 const SkeletonCard = () => (
   <div className="animate-pulse p-4 rounded-lg shadow">
     <div className="h-48 bg-gray-300 rounded mb-4"></div>
@@ -11,79 +11,107 @@ const SkeletonCard = () => (
   </div>
 );
 
+const API_BASE = "https://b11a11-server-side-ashahab007.vercel.app";
+
 const AllPackages = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [tourPackages, setTourPackages] = useState([]);
   const [search, setSearch] = useState("");
+  const [sort, setSort] = useState(""); // "", "asc", "desc"
 
-  useEffect(() => {
+  const fetchPackages = async () => {
     setIsLoading(true);
-    fetch(
-      `https://b11a11-server-side-ashahab007.vercel.app/packages?searchParams=${search}`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        setTourPackages(data);
-        setIsLoading(false);
-      })
-      .catch(() => setIsLoading(false));
-  }, [search]);
+    try {
+      const params = new URLSearchParams();
+      if (search) params.append("searchParams", search);
+      if (sort) params.append("sort", sort);
+
+      const res = await fetch(`${API_BASE}/packages?${params.toString()}`);
+      const data = await res.json();
+
+      // Fallback client-side numeric sort (in case backend isn't updated)
+      if (sort === "asc") {
+        data.sort((a, b) => Number(a.price || 0) - Number(b.price || 0));
+      } else if (sort === "desc") {
+        data.sort((a, b) => Number(b.price || 0) - Number(a.price || 0));
+      }
+
+      setTourPackages(data);
+    } catch (err) {
+      console.error("Failed to fetch packages:", err);
+      setTourPackages([]);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // Re-fetch whenever search or sort changes
+  useEffect(() => {
+    fetchPackages();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [search, sort]);
 
   return (
-    <div className="max-w-7xl mx-auto mt-16 sm:mt-20 mb-20 sm:mg-10 p-2">
-      <div className="mb-10">
-        <h1 className="text-center text-xl sm:text-2xl font-bold mb-4">
-          All Packages
-        </h1>
-        <p className="text-center">
-          Adventure is just a click away — from exotic getaways to weekend
-          escapes, discover destinations that inspire and packages that fit
-          every traveler.
+    <div className="max-w-7xl mx-auto mt-16 sm:mt-20 mb-20 p-2">
+      <div className="mb-8">
+        <h1 className="text-center text-2xl font-bold mb-2">All Packages</h1>
+        <p className="text-center text-sm text-gray-600">
+          Adventure is just a click away — discover destinations and packages
+          that fit every traveler.
         </p>
       </div>
 
-      {/* Search */}
-      <form
-        onSubmit={(e) => e.preventDefault()}
-        className="flex justify-center sm:justify-start"
-      >
-        <fieldset className="fieldset">
-          <legend className="text-sm text-gray-600">
-            Search Your Package Here
-          </legend>
-          <input
-            type="text"
-            name="search"
-            className="input w-full"
-            placeholder="Type here"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-        </fieldset>
-      </form>
+      {/* Search (left) + Sort (right) */}
+      <div className="flex flex-col sm:flex-row items-stretch justify-between gap-4 mb-6">
+        <form onSubmit={(e) => e.preventDefault()} className="flex-1">
+          <fieldset className="fieldset">
+            <legend className="text-sm text-gray-600">
+              Search Your Package Here
+            </legend>
+            <input
+              type="text"
+              name="search"
+              className="input w-full"
+              placeholder="Type package name (e.g. Sylhet)"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          </fieldset>
+        </form>
 
-      {/* Loading Skeletons */}
+        <div className="w-56">
+          <fieldset className="fieldset">
+            <legend className="text-sm text-gray-600">Sort By Price</legend>
+            <select
+              className="select w-full"
+              value={sort}
+              onChange={(e) => setSort(e.target.value)}
+            >
+              <option value="">Default</option>
+              <option value="asc">Price: Low to High</option>
+              <option value="desc">Price: High to Low</option>
+            </select>
+          </fieldset>
+        </div>
+      </div>
+
+      {/* Results */}
       {isLoading ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
-          {Array.from({ length: 6 }).map((_, index) => (
-            <SkeletonCard key={index} />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {Array.from({ length: 6 }).map((_, i) => (
+            <SkeletonCard key={i} />
           ))}
         </div>
+      ) : tourPackages.length === 0 ? (
+        <div className="text-center mt-10 text-gray-500 text-lg">
+          No results found{search ? ` for “${search}”` : ""}.
+        </div>
       ) : (
-        <>
-          {/* No Results */}
-          {tourPackages.length === 0 ? (
-            <div className="text-center mt-10 text-gray-500 text-xl">
-              No results found"<span className="font-semibold">{search}</span>"
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 gap-4 mt-6">
-              {tourPackages.map((tourPackage) => (
-                <PackageCard key={tourPackage._id} tourPackage={tourPackage} />
-              ))}
-            </div>
-          )}
-        </>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {tourPackages.map((pkg) => (
+            <PackageCard key={pkg._id} tourPackage={pkg} />
+          ))}
+        </div>
       )}
     </div>
   );
