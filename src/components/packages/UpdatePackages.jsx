@@ -84,7 +84,10 @@ const UpdatePackages = () => {
         <h2 className="text-xl sm:text-2xl font-bold text-center text-gray-800 mb-4 sm:mb-6 dark:text-white">
           Update Tour Package
         </h2>
-        <form onSubmit={handleUpdatePackage} className="space-y-3 sm:space-y-4">
+        <form
+          onSubmit={handleUpdatePackage}
+          className=" space-y-3 sm:space-y-4"
+        >
           <div className="mb-4">
             <label
               htmlFor="tour_name"

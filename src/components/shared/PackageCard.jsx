@@ -9,7 +9,7 @@ const PackageCard = ({ tourPackage }) => {
     <div
       className={`bg-white rounded-lg shadow-md overflow-hidden text-center p-4 ${
         theme ? "dark" : ""
-      }  dark:bg-zinc-400`}
+      }  dark:bg-zinc-500`}
     >
       <img
         src={tourPackage.image}
