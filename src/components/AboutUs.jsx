@@ -11,7 +11,7 @@ const AboutUs = () => {
     >
       <div className="max-w-7xl mx-auto px-4 py-8 mt-14">
         <section className="bg-white dark:bg-zinc-500 p-6 mb-8 rounded-lg shadow-md">
-          <h2 className="text-3xl font-semibold text-gray-800 dark:text-white mb-4">
+          <h2 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
             About Trip Nest
           </h2>
           <p className="mb-4">
@@ -71,7 +71,7 @@ const AboutUs = () => {
         </section>
 
         <section className="bg-white dark:bg-zinc-500 p-6 mb-8 rounded-lg shadow-md">
-          <h2 className="text-3xl font-semibold text-gray-800 dark:text-white mb-4">
+          <h2 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
             Our Story
           </h2>
           <p className="mb-4">
@@ -125,7 +125,7 @@ const AboutUs = () => {
         </section>
 
         <section className="bg-white dark:bg-zinc-500 p-6 mb-8 rounded-lg shadow-md">
-          <h2 className="text-3xl font-semibold text-gray-800 dark:text-white mb-4">
+          <h2 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
             Our Mission and Vision
           </h2>
           <p className="mb-4">
@@ -175,7 +175,7 @@ const AboutUs = () => {
         </section>
 
         <section className="bg-white dark:bg-zinc-500 p-6 mb-8 rounded-lg shadow-md">
-          <h2 className="text-3xl  font-semibold text-gray-800 dark:text-white mb-4">
+          <h2 className="text-2xl  font-semibold text-gray-800 dark:text-white mb-4">
             Our Values
           </h2>
           <p className="mb-4">
