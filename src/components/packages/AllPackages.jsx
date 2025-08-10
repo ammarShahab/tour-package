@@ -52,9 +52,11 @@ const AllPackages = () => {
 
   return (
     <section className={`${theme ? "dark" : ""} dark:bg-zinc-400`}>
-      <div className={`max-w-7xl mx-auto sm:mt-20 mb-20 p-2  `}>
+      <div className={`max-w-7xl mx-auto p-2 sm:pb-10  `}>
         <div className="mb-8">
-          <h1 className="text-center text-2xl font-bold mb-2">All Packages</h1>
+          <h1 className="text-center mt-20 text-2xl font-bold mb-2">
+            All Packages
+          </h1>
           <p className="text-center text-sm text-gray-600">
             Adventure is just a click away — discover destinations and packages
             that fit every traveler.

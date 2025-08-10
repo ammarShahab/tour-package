@@ -62,14 +62,12 @@ const MyBookings = () => {
 
   return (
     <section
-      className={`max-w-7xl mx-auto p-4 min-h-screen ${
-        theme ? "dark" : ""
-      } dark:bg-zinc-400`}
+      className={` p-4 min-h-screen ${theme ? "dark" : ""} dark:bg-zinc-400`}
     >
       <h1 className="text-2xl mt-20 font-bold mb-4 text-center dark:text-white">
         My Booking Information
       </h1>
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto max-w-7xl mx-auto">
         {isLoading ? (
           <Loading></Loading>
         ) : (
