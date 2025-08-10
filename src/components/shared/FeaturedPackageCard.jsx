@@ -12,7 +12,7 @@ const FeaturedPackageCard = ({ tourPackage }) => {
       className={`bg-white rounded-lg shadow-md overflow-hidden text-center p-4 ${
         theme ? "dark" : ""
       }  dark:bg-zinc-400 text-gray-600 dark:text-white`}
-      whileHover={{ scale: 1.1 }}
+      whileHover={{ scale: 1.05 }}
     >
       <img
         src={tourPackage.image}

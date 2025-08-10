@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import PackageCard from "../shared/PackageCard";
+import AuthContext from "../context/AuthContext";
 
 const SkeletonCard = () => (
   <div className="animate-pulse p-4 rounded-lg shadow">
@@ -15,6 +16,7 @@ const AllPackages = () => {
   const [tourPackages, setTourPackages] = useState([]);
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState("");
+  const { theme } = use(AuthContext);
 
   const fetchPackages = async () => {
     setIsLoading(true);
@@ -49,68 +51,70 @@ const AllPackages = () => {
   }, [search, sort]);
 
   return (
-    <div className="max-w-7xl mx-auto mt-16 sm:mt-20 mb-20 p-2">
-      <div className="mb-8">
-        <h1 className="text-center text-2xl font-bold mb-2">All Packages</h1>
-        <p className="text-center text-sm text-gray-600">
-          Adventure is just a click away — discover destinations and packages
-          that fit every traveler.
-        </p>
+    <section className={`${theme ? "dark" : ""} dark:bg-zinc-400`}>
+      <div className={`max-w-7xl mx-auto sm:mt-20 mb-20 p-2  `}>
+        <div className="mb-8">
+          <h1 className="text-center text-2xl font-bold mb-2">All Packages</h1>
+          <p className="text-center text-sm text-gray-600">
+            Adventure is just a click away — discover destinations and packages
+            that fit every traveler.
+          </p>
+        </div>
+
+        {/* Search + Sort */}
+        <div className="flex flex-col sm:flex-row items-stretch justify-between gap-4 mb-6">
+          <form onSubmit={(e) => e.preventDefault()} className="flex-1">
+            <fieldset className="fieldset">
+              <legend className="text-sm text-gray-600">
+                Search Your Package Here
+              </legend>
+              <input
+                type="text"
+                name="search"
+                className="input w-full"
+                placeholder="Type package name (e.g. Sylhet)"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+              />
+            </fieldset>
+          </form>
+
+          <div className="w-56">
+            <fieldset className="fieldset">
+              <legend className="text-sm text-gray-600">Sort By Price</legend>
+              <select
+                className="select w-full"
+                value={sort}
+                onChange={(e) => setSort(e.target.value)}
+              >
+                <option value="">Default</option>
+                <option value="asc">Price: Low to High</option>
+                <option value="desc">Price: High to Low</option>
+              </select>
+            </fieldset>
+          </div>
+        </div>
+
+        {/* Results */}
+        {isLoading ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <SkeletonCard key={i} />
+            ))}
+          </div>
+        ) : tourPackages.length === 0 ? (
+          <div className="text-center mt-10 text-gray-500 text-lg">
+            No results found{search ? ` for “${search}”` : ""}.
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {tourPackages.map((pkg) => (
+              <PackageCard key={pkg._id} tourPackage={pkg} />
+            ))}
+          </div>
+        )}
       </div>
-
-      {/* Search + Sort */}
-      <div className="flex flex-col sm:flex-row items-stretch justify-between gap-4 mb-6">
-        <form onSubmit={(e) => e.preventDefault()} className="flex-1">
-          <fieldset className="fieldset">
-            <legend className="text-sm text-gray-600">
-              Search Your Package Here
-            </legend>
-            <input
-              type="text"
-              name="search"
-              className="input w-full"
-              placeholder="Type package name (e.g. Sylhet)"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-            />
-          </fieldset>
-        </form>
-
-        <div className="w-56">
-          <fieldset className="fieldset">
-            <legend className="text-sm text-gray-600">Sort By Price</legend>
-            <select
-              className="select w-full"
-              value={sort}
-              onChange={(e) => setSort(e.target.value)}
-            >
-              <option value="">Default</option>
-              <option value="asc">Price: Low to High</option>
-              <option value="desc">Price: High to Low</option>
-            </select>
-          </fieldset>
-        </div>
-      </div>
-
-      {/* Results */}
-      {isLoading ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {Array.from({ length: 6 }).map((_, i) => (
-            <SkeletonCard key={i} />
-          ))}
-        </div>
-      ) : tourPackages.length === 0 ? (
-        <div className="text-center mt-10 text-gray-500 text-lg">
-          No results found{search ? ` for “${search}”` : ""}.
-        </div>
-      ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {tourPackages.map((pkg) => (
-            <PackageCard key={pkg._id} tourPackage={pkg} />
-          ))}
-        </div>
-      )}
-    </div>
+    </section>
   );
 };
 

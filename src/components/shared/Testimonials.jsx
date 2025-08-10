@@ -74,7 +74,7 @@ const Testimonials = () => {
                     </div>
 
                     <blockquote className="flex-1 mt-8">
-                      <p className="text-lg leading-relaxed dark:text-white text-gray-900 font-pj">
+                      <p className="text-sm sm:text-[16px] leading-relaxed dark:text-white text-gray-900 font-pj">
                         “Trip Nest arranged our Cox’s Bazar trip perfectly!
                         Hotel was clean, sea view amazing, and local guide very
                         friendly. Everything was smooth and well-organized.
@@ -145,7 +145,7 @@ const Testimonials = () => {
                     </div>
 
                     <blockquote className="flex-1 mt-8">
-                      <p className="text-lg leading-relaxed dark:text-white text-gray-900 font-pj">
+                      <p className="text-sm sm:text-[16px] leading-relaxed dark:text-white text-gray-900 font-pj">
                         “Sajek Valley tour was wonderful! The transport, resort,
                         and food were all great. Only minor delay on departure
                         day, but overall a memorable and peaceful trip. Will
@@ -219,7 +219,7 @@ const Testimonials = () => {
                     </div>
 
                     <blockquote className="flex-1 mt-8">
-                      <p className="text-lg leading-relaxed dark:text-white text-gray-900 font-pj">
+                      <p className="text-sm sm:text-[16px] leading-relaxed dark:text-white text-gray-900 font-pj">
                         “Booked a Sylhet tea garden tour with Trip Nest. Loved
                         the beautiful scenery, friendly driver, and comfortable
                         stay. The entire trip felt safe, relaxing, and truly

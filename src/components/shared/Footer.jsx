@@ -9,13 +9,13 @@ const Footer = () => {
   const { theme, setTheme } = useContext(AuthContext);
   return (
     <>
-      <div
+      <footer
         className={`${
           theme ? "dark" : ""
-        }  dark:bg-zinc-600 bg-[#147073] max-h-screen`}
+        }  dark:bg-zinc-600 bg-[#147073] max-h-screen p-2`}
       >
         <div
-          className={`flex flex-col justify-between py-10 px-2 mx-auto space-y-8 lg:flex-row lg:space-y-0 text-gray-800 ${
+          className={`max-w-7xl mx-auto flex flex-col justify-between py-10 px-2 space-y-8 lg:flex-row lg:space-y-0 text-gray-800 ${
             theme ? "dark" : ""
           }  dark:bg-zinc-600 bg-[#147073]`}
         >
@@ -57,10 +57,10 @@ const Footer = () => {
               </ul>
             </div>
             <div className="space-y-3">
-              <h3 className="tracking-wide uppercase text-white dark:text-white">
+              <h3 className="tracking-wide uppercase text-white dark:text-white text-right sm:text-left">
                 Company
               </h3>
-              <ul className="space-y-1">
+              <ul className="space-y-1 text-right sm:text-left">
                 <li>
                   <Link
                     className="text-white hover:underline dark:text-white"
@@ -86,10 +86,10 @@ const Footer = () => {
               </ul>
             </div>
             <div className="space-y-3">
-              <div className="uppercase text-white dark:text-white">
+              <div className="uppercase text-white text-right dark:text-white">
                 Social media
               </div>
-              <div className="flex justify-start space-x-3">
+              <div className="flex justify-end space-x-3">
                 <div className="flex justify-center gap-5">
                   <a
                     href="https://facebook.com"
@@ -131,7 +131,7 @@ const Footer = () => {
         <p className="text-sm text-white mt-4 text-center">
           © {new Date().getFullYear()} Trip Nest. All rights reserved.
         </p>
-      </div>
+      </footer>
     </>
   );
 };
