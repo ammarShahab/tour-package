@@ -87,7 +87,7 @@ const GalleryCarousel = () => {
           unique story waiting to be explored. Let these images take you on a
           visual journey.
         </p>
-        <div className="max-w-6xl  mx-auto">
+        <div className="max-w-7xl  mx-auto">
           <Slider {...settings}>
             {images.map((image, index) => (
               <div key={index} className="px-1 sm:px-2">
