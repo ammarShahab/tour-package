@@ -75,12 +75,12 @@ const UpdatePackages = () => {
   };
 
   return (
-    <div
-      className={`w-full min-h-screen bg-gray-100 flex items-center justify-center p-4 sm:p-6 ${
+    <section
+      className={` min-h-screen mt-16 bg-gray-100  p-4 sm:p-6 ${
         theme ? "dark" : ""
       } dark:bg-zinc-300`}
     >
-      <div className="w-full max-w-lg sm:max-w-3xl bg-white p-4 sm:p-6 rounded-lg shadow-lg dark:bg-zinc-400">
+      <div className="max-w-7xl mx-auto bg-white p-4 sm:p-6 rounded-lg shadow-lg dark:bg-zinc-400">
         <h2 className="text-xl sm:text-2xl font-bold text-center text-gray-800 mb-4 sm:mb-6 dark:text-white">
           Update Tour Package
         </h2>
@@ -305,7 +305,7 @@ const UpdatePackages = () => {
           </button>
         </form>
       </div>
-    </div>
+    </section>
   );
 };
 

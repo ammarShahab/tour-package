@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PackageCard from "../shared/PackageCard";
 
-/* Simple skeleton while loading */
 const SkeletonCard = () => (
   <div className="animate-pulse p-4 rounded-lg shadow">
     <div className="h-48 bg-gray-300 rounded mb-4"></div>
@@ -11,25 +10,24 @@ const SkeletonCard = () => (
   </div>
 );
 
-const API_BASE = "https://b11a11-server-side-ashahab007.vercel.app";
-
 const AllPackages = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [tourPackages, setTourPackages] = useState([]);
   const [search, setSearch] = useState("");
-  const [sort, setSort] = useState(""); // "", "asc", "desc"
+  const [sort, setSort] = useState("");
 
   const fetchPackages = async () => {
     setIsLoading(true);
     try {
       const params = new URLSearchParams();
       if (search) params.append("searchParams", search);
-      if (sort) params.append("sort", sort);
 
-      const res = await fetch(`${API_BASE}/packages?${params.toString()}`);
+      const res = await fetch(
+        `https://b11a11-server-side-ashahab007.vercel.app/packages?${params.toString()}`
+      );
       const data = await res.json();
 
-      // Fallback client-side numeric sort (in case backend isn't updated)
+      // Client-side sorting by numeric price
       if (sort === "asc") {
         data.sort((a, b) => Number(a.price || 0) - Number(b.price || 0));
       } else if (sort === "desc") {
@@ -45,7 +43,6 @@ const AllPackages = () => {
     }
   };
 
-  // Re-fetch whenever search or sort changes
   useEffect(() => {
     fetchPackages();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -61,7 +58,7 @@ const AllPackages = () => {
         </p>
       </div>
 
-      {/* Search (left) + Sort (right) */}
+      {/* Search + Sort */}
       <div className="flex flex-col sm:flex-row items-stretch justify-between gap-4 mb-6">
         <form onSubmit={(e) => e.preventDefault()} className="flex-1">
           <fieldset className="fieldset">

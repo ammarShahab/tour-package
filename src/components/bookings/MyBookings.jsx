@@ -61,8 +61,8 @@ const MyBookings = () => {
   };
 
   return (
-    <div
-      className={`mx-auto p-4 min-h-screen bg-gray-100  ${
+    <section
+      className={`max-w-7xl mx-auto p-4 min-h-screen ${
         theme ? "dark" : ""
       } dark:bg-zinc-400`}
     >
@@ -139,7 +139,7 @@ const MyBookings = () => {
           </>
         )}
       </div>
-    </div>
+    </section>
   );
 };
 
