@@ -20,12 +20,12 @@ const FeaturedPackages = ({ featuredPackagesPromise }) => {
 
   return (
     <div
-      className={` px-4 py-6 mb-20  p-4 ${
+      className={` px-4 pt-6 pb-20 p-4 ${
         theme ? "dark" : ""
       }  dark:bg-zinc-600`}
     >
       <div className="max-w-7xl mx-auto mt-20">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 font-bitter text-center text-[#DCC6E0] dark:text-white">
+        <h1 className="mb-4 sm:mb-6 font-bitter text-center text-[#DCC6E0] dark:text-white">
           <TextAnimation></TextAnimation>
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
@@ -38,7 +38,7 @@ const FeaturedPackages = ({ featuredPackagesPromise }) => {
           ))}
         </div>
         <Link to="/allPackages">
-          <button className="block mx-auto mt-6 bg-[#d9cab3] text-black px-6 py-3 rounded-md text-lg hover:bg-[#ff8d03] transition font-semibold">
+          <button className="block mx-auto mt-6 bg-[#d9cab3] text-black px-6 py-3 rounded-md text-sm hover:bg-[#ff8d03] transition font-semibold">
             See All Packages
           </button>
         </Link>

@@ -22,7 +22,7 @@ const Banner = () => {
             Discover Your Next Adventure
           </h1>
 
-          <p className="text-sm md:text-sm text-white max-w-2xl drop-shadow-md">
+          <p className="text-sm md:text-lg text-white max-w-2xl drop-shadow-md font-bitter">
             Explore breathtaking destinations and unforgettable experiences.
             Book the perfect tour package for your next journey—all in one
             place.

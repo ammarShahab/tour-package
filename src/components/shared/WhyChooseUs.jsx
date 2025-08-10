@@ -36,16 +36,16 @@ const WhyChooseUs = () => {
   };
   return (
     <section
-      className={`py-16  px-8 bg-[#6090a6] ${
+      className={`py-16 px-8  ${
         theme ? "dark" : ""
       } dark:bg-zinc-600 dark:text-white`}
     >
-      <div className="container mx-auto px-4">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center font-bitter text-white mb-12">
+      <div className="max-w-7xl mx-auto px-4 mt-10 ">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center font-bitter  mb-4 sm:mb-6">
           Why Choose TripNest?
         </h2>
 
-        <Slider {...settings} className="slick-slider">
+        <Slider {...settings} className="slick-slider mt-8">
           {/* Slide 1 */}
           <div className="px-2">
             <div className="flex flex-col items-center p-6 rounded-lg shadow-md bg-[#E6F0FA] dark:bg-zinc-400">
@@ -67,8 +67,8 @@ const WhyChooseUs = () => {
                 Best Price Guarantee
               </h3>
               <p className="text-gray-600 dark:text-white text-center mb-4">
-                We offer competitive prices with no hidden fees, ensuring you
-                get the best deals on your travel bookings.
+                We offer competitive prices without hidden fees, ensuring the
+                best travel deals.
               </p>
             </div>
           </div>
@@ -95,7 +95,7 @@ const WhyChooseUs = () => {
               </h3>
               <p className="text-gray-600 text-center mb-4 dark:text-white">
                 Explore thousands of destinations worldwide, from exotic beaches
-                to vibrant cities, all in one place.
+                to vibrant cities, all together.
               </p>
             </div>
           </div>
@@ -205,8 +205,8 @@ const WhyChooseUs = () => {
                 Exclusive Deals & Offers
               </h3>
               <p className="text-gray-600 text-center mb-4 dark:text-white">
-                Unlock special discounts and promotions available only to
-                TripNest users for a memorable travel experience.
+                "Exclusive TripNest discounts and promotions for an
+                unforgettable travel experience."
               </p>
             </div>
           </div>

@@ -69,25 +69,25 @@ const GalleryCarousel = () => {
   ];
   return (
     <section
-      className={`py-6 sm:py-8 md:py-10 lg:py-12 bg-[#007073] mb-36 font-bitter ${
+      className={`py-6 sm:py-8  bg-[#007073] font-bitter ${
         theme ? "dark" : ""
       }  dark:bg-zinc-600 dark:text-white`}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl px-4 mx-auto  mt-10">
         {theme == "dark" ? (
-          <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-4 sm:mb-6 text-white">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-4 sm:mb-6 text-white font-bitter">
             Moments in Motion
           </h3>
         ) : (
           <TextAnimationGallery></TextAnimationGallery>
         )}
 
-        <p className="text-base sm:text-lg md:text-xl text-center mb-6 sm:mb-8 max-w-3xl mx-auto text-white">
+        <p className="text-base md:text-lg text-center mb-6 sm:mb-8 max-w-3xl mx-auto text-white">
           Dive into a carousel of cherished memories. Each frame captures a
           unique story waiting to be explored. Let these images take you on a
           visual journey.
         </p>
-        <div className="max-w-full sm:max-w-4xl lg:max-w-5xl mx-auto">
+        <div className="max-w-6xl  mx-auto">
           <Slider {...settings}>
             {images.map((image, index) => (
               <div key={index} className="px-1 sm:px-2">

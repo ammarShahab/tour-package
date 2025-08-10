@@ -30,7 +30,7 @@ const AllPackages = () => {
   }, [search]);
 
   return (
-    <div className="max-w-7xl mx-auto mt-16 sm:mt-20 mb-40 p-2">
+    <div className="max-w-7xl mx-auto mt-16 sm:mt-20 mb-20 sm:mg-10 p-2">
       <div className="mb-10">
         <h1 className="text-center text-xl sm:text-2xl font-bold mb-4">
           All Packages

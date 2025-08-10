@@ -4,30 +4,18 @@ import AuthContext from "../context/AuthContext";
 const Testimonials = () => {
   const { theme } = use(AuthContext);
   return (
-    <section className={`${theme ? "dark" : ""}  dark:bg-zinc-600`}>
-      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 mb-20 ">
+    <section
+      className={`${theme ? "dark" : ""}  dark:bg-zinc-600 py-6 sm:py-8`}
+    >
+      <div className="px-4 mx-auto max-w-7xl sm:px-6  lg:px-8">
         <div className="flex flex-col items-center ">
           <div className="text-center mt-20">
-            {/* <p className="text-lg font-medium text-gray-600 font-pj">
-              2,157 people have said how good Rareblocks
-            </p> */}
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 font-bitter dark:text-white">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl mb-4 sm:mb-6 font-bold text-gray-900 font-bitter dark:text-white capitalize">
               Our happy clients say about us
             </h2>
           </div>
 
-          {/*  <div className="mt-8 text-center md:mt-16 md:order-3">
-            <a
-              href="#"
-              title=""
-              className="pb-2 text-base font-bold leading-7 text-gray-900 transition-all duration-200 border-b-2 border-gray-900 hover:border-gray-600 font-pj focus:outline-none focus:ring-1 focus:ring-gray-900 focus:ring-offset-2 hover:text-gray-600"
-            >
-              {" "}
-              Check all 2,157 reviews{" "}
-            </a>
-          </div>
- */}
-          <div className="relative mt-10 md:mt-24 md:order-2 ">
+          <div className="relative mt-6 md:order-2 ">
             <div className="absolute -inset-x-1 inset-y-16 md:-inset-x-2 md:-inset-y-6">
               <div
                 className="w-full h-full max-w-5xl mx-auto rounded-3xl opacity-30 blur-lg filter"
