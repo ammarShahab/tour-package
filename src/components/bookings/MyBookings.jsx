@@ -67,7 +67,7 @@ const MyBookings = () => {
       <h1 className="text-2xl mt-20 font-bold mb-4 text-center dark:text-white">
         My Booking Information
       </h1>
-      <div className="overflow-x-auto max-w-7xl mx-auto">
+      <div className="overflow-x-auto max-w-7xl mx-auto shadow-md rounded-lg">
         {isLoading ? (
           <Loading></Loading>
         ) : (
@@ -79,7 +79,7 @@ const MyBookings = () => {
                 </h3>
               </div>
             ) : (
-              <table className="min-w-full bg-white border border-gray-300">
+              <table className="min-w-full bg-white border  border-gray-300">
                 <thead>
                   <tr className="bg-gray-200 text-gray-600 text-sm leading-normal">
                     <th className="py-3 px-6 text-left">Sl. No.</th>
