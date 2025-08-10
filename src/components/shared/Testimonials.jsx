@@ -15,7 +15,7 @@ const Testimonials = () => {
             </h2>
           </div>
 
-          <div className="relative mt-6 md:order-2 ">
+          <div className="relative mt-6 md:order-2 mb-20">
             <div className="absolute -inset-x-1 inset-y-16 md:-inset-x-2 md:-inset-y-6">
               <div
                 className="w-full h-full max-w-5xl mx-auto rounded-3xl opacity-30 blur-lg filter"
@@ -99,7 +99,7 @@ const Testimonials = () => {
               </div>
 
               <div className="flex flex-col overflow-hidden shadow-xl rounded-lg">
-                <div className="flex flex-col justify-between flex-1 p-6 bg-white  dark:bg-zinc-400 text-gray-600 lg:py-8 lg:px-7">
+                <div className="flex flex-col justify-between flex-1 p-6 bg-white  dark:bg-zinc-400 text-gray-600 lg:py-8 lg:px-7 ">
                   <div className="flex-1">
                     <div className="flex items-center">
                       <svg
