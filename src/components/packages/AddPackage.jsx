@@ -1,8 +1,10 @@
 import React, { use } from "react";
 import Swal from "sweetalert2";
 import AuthContext from "../context/AuthContext";
+import useSystemTheme from "../../assets/hooks/useSystemTheme";
 
 const AddPackage = () => {
+  useSystemTheme();
   const { user, theme } = use(AuthContext);
   // console.log(user);
   // console.log(user?.email);

@@ -3,8 +3,10 @@ import AuthContext from "../context/AuthContext";
 import { useLoaderData, useNavigate } from "react-router";
 import axios from "axios";
 import Swal from "sweetalert2";
+import useSystemTheme from "../../assets/hooks/useSystemTheme";
 
 const UpdatePackages = () => {
+  useSystemTheme();
   const { user, theme } = use(AuthContext);
   const data = useLoaderData();
   // console.log(data);

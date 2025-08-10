@@ -1,7 +1,9 @@
 import React from "react";
 import { motion } from "motion/react";
+import useSystemTheme from "../../assets/hooks/useSystemTheme";
 
 const TextAnimationGallery = () => {
+  useSystemTheme();
   return (
     <motion.h2
       className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-4 sm:mb-6 dark:text-white"

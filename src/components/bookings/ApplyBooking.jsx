@@ -3,8 +3,10 @@ import { useLoaderData, useNavigate, useParams } from "react-router";
 import AuthContext from "../context/AuthContext";
 import axios from "axios";
 import Swal from "sweetalert2";
+import useSystemTheme from "../../assets/hooks/useSystemTheme";
 
 const ApplyBooking = () => {
+  useSystemTheme();
   const data = useLoaderData();
   // console.log(data);
 

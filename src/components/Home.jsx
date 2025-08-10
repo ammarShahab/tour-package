@@ -6,6 +6,7 @@ import GalleryCarousel from "./shared/GalleryCarousel";
 import Loading from "./Loading";
 import WhyChooseUs from "./shared/WhyChooseUs";
 import Testimonials from "./shared/Testimonials";
+import useSystemTheme from "../assets/hooks/useSystemTheme";
 
 const featuredPackagesPromise = fetch(
   "https://b11a11-server-side-ashahab007.vercel.app/featured-packages"
@@ -14,6 +15,7 @@ const featuredPackagesPromise = fetch(
 
 const Home = () => {
   const { isLoading } = use(AuthContext);
+  useSystemTheme();
   return (
     <>
       <Banner></Banner>

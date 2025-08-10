@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router";
+import useSystemTheme from "../../assets/hooks/useSystemTheme";
 
 const MyPackagesTable = ({ myPackage, handleDelete, setMyPackages }) => {
+  useSystemTheme();
   return (
     <tr className="border-b border-gray-200 hover:bg-gray-100 flex flex-col sm:table-row">
       <td className="py-3 px-4 flex items-center sm:table-cell">

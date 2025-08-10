@@ -1,8 +1,10 @@
 import React, { use } from "react";
 import { Link, useLoaderData } from "react-router";
 import AuthContext from "./context/AuthContext";
+import useSystemTheme from "../assets/hooks/useSystemTheme";
 
 const PackageDetails = () => {
+  useSystemTheme();
   const tourPackage = useLoaderData();
   const { theme, setIsLoading } = use(AuthContext);
   setIsLoading(false);

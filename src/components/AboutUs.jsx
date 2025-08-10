@@ -1,8 +1,10 @@
 import React, { use } from "react";
 import AuthContext from "./context/AuthContext";
+import useSystemTheme from "../assets/hooks/useSystemTheme";
 
 const AboutUs = () => {
   const { theme } = use(AuthContext);
+  useSystemTheme();
   return (
     <div
       className={`min-h-screen bg-gray-100 font-sans text-gray-800 leading-relaxed ${

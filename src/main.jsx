@@ -12,5 +12,6 @@ createRoot(document.getElementById("root")).render(
       <RouterProvider router={router}></RouterProvider>
       <Toaster position="top-left"></Toaster>
     </AuthProvider>
+    {/* <ThemeToggle></ThemeToggle> */}
   </StrictMode>
 );

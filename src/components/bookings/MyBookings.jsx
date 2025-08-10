@@ -3,8 +3,10 @@ import AuthContext from "../context/AuthContext";
 import axios from "axios";
 import Swal from "sweetalert2";
 import Loading from "../Loading";
+import useSystemTheme from "../../assets/hooks/useSystemTheme";
 
 const MyBookings = () => {
+  useSystemTheme();
   const { user, theme } = use(AuthContext);
   const [isLoading, setIsLoading] = useState(false);
 

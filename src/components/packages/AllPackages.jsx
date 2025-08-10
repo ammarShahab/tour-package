@@ -1,6 +1,7 @@
 import React, { use, useEffect, useState } from "react";
 import PackageCard from "../shared/PackageCard";
 import AuthContext from "../context/AuthContext";
+import useSystemTheme from "../../assets/hooks/useSystemTheme";
 
 const SkeletonCard = () => (
   <div className="animate-pulse p-4 rounded-lg shadow">
@@ -12,6 +13,7 @@ const SkeletonCard = () => (
 );
 
 const AllPackages = () => {
+  useSystemTheme();
   const [isLoading, setIsLoading] = useState(false);
   const [tourPackages, setTourPackages] = useState([]);
   const [search, setSearch] = useState("");

@@ -3,9 +3,11 @@ import { useLoaderData } from "react-router";
 import Swal from "sweetalert2";
 import MyPackagesTable from "./MyPackagesTable";
 import AuthContext from "../context/AuthContext";
+import useSystemTheme from "../../assets/hooks/useSystemTheme";
 
 const MyPackages = () => {
   const data = useLoaderData();
+  useSystemTheme();
   const { theme, setIsLoading } = use(AuthContext);
   // console.log(data);
   setIsLoading(false);

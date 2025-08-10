@@ -1,8 +1,10 @@
 import React, { use } from "react";
 import AuthContext from "./context/AuthContext";
+import useSystemTheme from "../assets/hooks/useSystemTheme";
 
 const PrivacyPolicy = () => {
   const { theme } = use(AuthContext);
+  useSystemTheme();
   return (
     <div className={` ${theme ? "dark" : ""} dark:bg-zinc-400`}>
       <div className="max-w-7xl mx-auto px-4 py-12 mt-12">
