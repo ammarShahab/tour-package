@@ -17,7 +17,7 @@ const Error404 = () => {
         </p>
         <Link
           to="/"
-          className="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+          className="inline-block px-6 py-3 bg-[#fe8d02] hover:bg-yellow-500  text-white rounded-lg  transition"
         >
           Back to Home
         </Link>
